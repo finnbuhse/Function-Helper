@@ -1,0 +1,34 @@
+<input type="text" [(ngModel)]="funcString"/>
+<button type="button" (click)="convert()">Convert</button>
+<p>Reverse Polish Notation: {{RPString}}</p>
+
+<div *ngIf="RPString != ''">
+<h1>Calculate value & gradient</h1>
+<tr *ngFor="let sub of substitutions; let i = index;">
+  <td>
+    <mat-form-field>
+      <input required matInput placeholder="Substitute {{substitutions[i][0]}}" [name]="'sub_' + i" type="number" [(ngModel)]="substitutions[i][1]"/>
+    </mat-form-field>
+  </td>
+</tr> <br>
+
+<button type="button" (click)="evaluate()">Evaluate</button>
+<p>{{evaluateResult}}</p>
+<p> Gradient variable: <input type="text" [(ngModel)]="gradientVariable"/> </p>
+<button type="button" (click)="gradient()">Gradient</button>
+<p>{{gradientResult}}</p>
+
+<h1>Plot</h1>
+<p> Plot increment variable: <input type="text" [(ngModel)]="plotIncrementVariable"/></p>
+<p> Plot variable start: <input type="number" [(ngModel)]="plotVariableStart"/></p>
+<p> Plot variable end: <input type="number" [(ngModel)]="plotVariableEnd"/></p>
+<p> Plot increment: <input type="number" [(ngModel)]="plotIncrement"/></p>
+<button type="button" (click)="plot()">Plot</button>
+<graph id="plot0"></graph>
+
+<h1>Solve</h1>
+<p> Solve variable: <input type="text" [(ngModel)]="solveVariable"/></p>
+<p> Variable start: <input type="number" [(ngModel)]="variableStart"/></p>
+<button type="button" (click)="solve()">Solve</button>
+<p> {{solveResult}} </p>
+</div>
