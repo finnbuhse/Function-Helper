@@ -2,10 +2,9 @@ import { Compiler, Component, ElementRef, Input, ViewChild, AfterViewInit } from
 import { GraphComponent } from './graph.component';
 import './function';
 
-
 @Component({
   selector: 'functionInput',
-  templateUrl: 'function.component.html',
+  templateUrl: 'functionInput.component.html',
 	styleUrls: ['./appStyle.css']
 })
 export class FunctionInputComponent
