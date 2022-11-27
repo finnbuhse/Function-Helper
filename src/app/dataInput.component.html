@@ -1,3 +1,10 @@
 <input type="input" [(ngModel)]="variable"/>
 <button type="button" (click)="addVariable()">Add variable</button>
 <button type="button" (click)="clearVariables()">Delete variables</button>
+<tr *ngFor="let var of variables; let i = index;">
+  <td>
+    <mat-form-field>
+      <input required matInput placeholder="var values" [name]="'set_' + i" type="text" [(ngModel)]="datasetTexts[i]"/>
+    </mat-form-field>
+  </td>
+</tr> <br>

@@ -10,6 +10,8 @@ import './function';
 export class DataInputComponent {
   variable = "";
   variables = [];
+  datasetTexts = [];
+  datasets = [];
 
   clearVariables()
   {
