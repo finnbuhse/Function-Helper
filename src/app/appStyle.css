@@ -1,2 +1,8 @@
 p  {font-family: Arial;}
 h1 {font-family: Arial;}
+.row {
+  display: flex;
+}
+.column {
+  flex: 50%;
+}

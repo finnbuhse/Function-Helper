@@ -9,4 +9,4 @@ There is a specific syntax that is supported:
   - Similarly, +, -, and / operators must have a space between them and thier parameters.
   - There should never be a space immedietly following an open bracket, or preceding a closing bracket. For example '( x + 4 )' is invalid and should be written '(x + 4)' instead.
   - logarithms are supported and should be written log(base, x)
-  - sin, cos, and tan are also supported and are written sin(x), cos(x), and tan(x) respectively. 
+  - sin, cos, and tan are also supported and are written sin(x), cos(x), and tan(x) respectively.
