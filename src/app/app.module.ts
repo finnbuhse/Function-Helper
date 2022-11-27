@@ -8,11 +8,11 @@ import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { GraphComponent } from './graph.component';
-import { FunctionComponent } from './function.component';
+import { FunctionInputComponent } from './function.component';
 
 @NgModule({
   imports:      [ BrowserModule, BrowserAnimationsModule, FormsModule, MatInputModule, MatFormFieldModule, ChartsModule ],
-  declarations: [ AppComponent, GraphComponent, FunctionComponent ],
+  declarations: [ AppComponent, GraphComponent, FunctionInputComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule {
