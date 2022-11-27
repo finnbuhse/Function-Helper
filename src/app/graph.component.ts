@@ -11,7 +11,8 @@ import { Component, Input } from '@angular/core';
       [labels]="labels"
       [options]="chartOptions">
     </canvas>
-    `
+    `,
+    styleUrls: ['./appStyle.css']
 })
 export class GraphComponent  {
   datasets = [];

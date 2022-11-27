@@ -526,7 +526,8 @@ function solveNewtonRaphson(func, substitutions, solveVariable, var0, maximumIte
 
 @Component({
   selector: 'functionInput',
-  templateUrl: 'function.component.html'
+  templateUrl: 'function.component.html',
+	styleUrls: ['./appStyle.css']
 })
 export class FunctionComponent
 {
