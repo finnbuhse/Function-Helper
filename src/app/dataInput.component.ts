@@ -10,4 +10,14 @@ import './function';
 export class DataInputComponent {
   variable = "";
   variables = [];
+
+  clearVariables()
+  {
+    this.variables = [];
+  }
+
+  addVariable()
+  {
+    this.variables.push(this.variable);
+  }
 }
