@@ -1,6 +1,6 @@
 import { Compiler, Component, ElementRef, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { GraphComponent } from './graph.component';
-import './function';
+import './function.ts';
 
 @Component({
   selector: 'functionInput',

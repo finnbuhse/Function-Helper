@@ -1,6 +1,6 @@
 import { Compiler, Component, ElementRef, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { GraphComponent } from './graph.component';
-import './function';
+import './function.ts';
 
 @Component({
   selector: 'dataInput',
@@ -40,31 +40,40 @@ export class DataInputComponent {
       }
     }
 
+    // Generate LaGrange Polynomial
     var functionComponents = [];
     for (var i = 0; i < this.datasets[0].length; i++)
     {
-      var quotientComponents = [];
-      var 
+      var numeratorComponents = [];
+      var denominatorComponents = [];
+      
       var first = false;
       for (var j = 0; j < this.datasets[0].length; j++)
       {
         if(j != i)
         {
-          functionComponents.push(new Variable(this.variables[0]));
-          functionComponents.push(this.datasets[0][j]);
-          functionComponents.push(Operator.Subtract);
+          numeratorComponents.push(new Variable(this.variables[0]));
+          numeratorComponents.push(this.datasets[0][j]);
+          numeratorComponents.push(Operator.Subtract);
+
+          denominatorComponents.push(this.datasets[0][i]);
+          denominatorComponents.push(this.datasets[0][j])
+          denominatorComponents.push(Operator.Subtract);
           if(first)
           {
-            functionComponents.push(Operator.Multiply);
+            numeratorComponents.push(Operator.Multiply);
+            denominatorComponents.push(Operator.Multiply);
           }
-
-          /*
-          functionComponents.push(this.datasets[0][i]);
-          functionComponents.push(this.datasets[0][j]);
-          functionComponents.push(Operator.Subtract);
-          */
+          first = true;
         }
       }
+
+      functionComponents = functionComponents.concat(numeratorComponents.concat(denominatorComponents.concat(Operator.Divide)));
+      if(i > 0)
+      {
+        functionComponents.push(Operator.Add);
+      }
     }
+    console.log(functionComponents);
   }
 }
