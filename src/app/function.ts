@@ -1,4 +1,5 @@
 const h = 0.00001;
+const minFunctionStringLength = 5;
 
 function logBase(base, x)
 {
@@ -351,6 +352,7 @@ function makeSubstitution(substitutions, string, subString, subName, subComponen
 export enum ValidateStringResult{
 	Success,
 	Empty,
+	LessThanMinLength,
 	NoSpacePrecedingOperator,
 	NoSpaceFollowingOperator,
 	SpaceFollowingOpenBracket,
@@ -362,6 +364,10 @@ export function validateStringForFunction(string)
 	if(string == "")
 	{
 		return ValidateStringResult.Empty;
+	}
+	else if(string.length < minFunctionStringLength)
+	{
+		return ValidateStringResult.LessThanMinLength;
 	}
 
 	var lastWasSpace = false;

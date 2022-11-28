@@ -32,6 +32,8 @@ export class FunctionInputComponent
     case ValidateStringResult.SpacePrecedingCloseBracket:
       this.validateString = "Space preceding close bracket is invalid.";
       return;
+    case ValidateStringResult.LessThanMinLength:
+      this.validateString = "Minimum length for text to be converted is 5 characters."
     case ValidateStringResult.Empty:
       this.validateString = "";
       return;
