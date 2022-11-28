@@ -1,5 +1,6 @@
 import { Compiler, Component, ElementRef, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { Operator, Variable, RPFunction } from './function';
+import { FunctionInteractorComponent } from './functionInteractor.component';
 
 @Component({
   selector: 'dataInput',
@@ -7,6 +8,8 @@ import { Operator, Variable, RPFunction } from './function';
 	styleUrls: ['./appStyle.css']
 })
 export class DataInputComponent {
+  @ViewChild(FunctionInteractorComponent) functionInteractor: FunctionInteractorComponent;
+
   variable = "";
   variables = [];
   datasetTexts = [];
@@ -75,7 +78,7 @@ export class DataInputComponent {
         functionComponents.push(Operator.Add);
       }
     }
-    this.func = new RPFunction(functionComponents);
-    this.RPString = this.func.toString();
+
+    this.functionInteractor.initialize(new RPFunction(functionComponents));
   }
 }
