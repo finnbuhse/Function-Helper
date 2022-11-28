@@ -16,33 +16,26 @@ export class FunctionInputComponent
 
   convert()
   {
+    this.validateString = "";
     var result = validateStringForFunction(this.funcString);
-    if(result == ValidateStringResult.NoSpacePrecedingOperator)
+    switch(result)
     {
+    case ValidateStringResult.NoSpacePrecedingOperator:
       this.validateString = "Missing space preceding operator.";
       return;
-    }
-    else if(result == ValidateStringResult.NoSpaceFollowingOperator)
-    {
+    case ValidateStringResult.NoSpaceFollowingOperator:
       this.validateString = "Missing space following operator.";
       return;
-    }
-    else if(result == ValidateStringResult.SpaceFollowingOpenBracket)
-    {
+    case ValidateStringResult.SpaceFollowingOpenBracket:
       this.validateString = "Space following open bracket is invalid.";
       return;
-    }
-    else if(result == ValidateStringResult.SpacePrecedingCloseBracket)
-    {
+    case ValidateStringResult.SpacePrecedingCloseBracket:
       this.validateString = "Space preceding close bracket is invalid.";
       return;
-    }
-    else if(result == ValidateStringResult.Empty)
-    {
+    case ValidateStringResult.Empty:
       this.validateString = "";
       return;
     }
-    this.validateString = "";
     this.functionInteractor.initialize(new RPFunction(parseStringToFunction(this.funcString)));
   }
 }

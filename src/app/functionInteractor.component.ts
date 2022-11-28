@@ -11,6 +11,8 @@ export class FunctionInteractorComponent
 {
 	@ViewChild(GraphComponent) graph: GraphComponent;
 
+	hide = true;
+
   func;
 	RPString = "";
 
@@ -43,6 +45,7 @@ export class FunctionInteractorComponent
 		{
 			this.substitutions.push([this.func.variableNames[i], 0]);
 		}
+		this.hide = false;
   }
 
 	evaluate()

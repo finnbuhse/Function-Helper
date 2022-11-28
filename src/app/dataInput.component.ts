@@ -14,7 +14,7 @@ export class DataInputComponent {
   variables = ["x", "y"];
   datasetTexts = [];
   datasets = [[], []];
-  datasetsContainNaN = false;
+  validateString = "";
   func;
   RPString = "";
 
@@ -31,7 +31,7 @@ export class DataInputComponent {
 
   generateFunction()
   {
-    this.datasetsContainNaN = false;
+    this.validateString = "";
     // Parse strings into datasets
     for (var i = 0; i < this.datasetTexts.length; i++)
     {
@@ -43,14 +43,20 @@ export class DataInputComponent {
         var f = parseFloat(tempArray[j]);
         if(isNaN(f))
         {
-          this.datasetsContainNaN = true;
+          this.validateString = "All data values must be real numbers.";
+          return;
         }
         this.datasets[i].push(f);
       }
     }
-    if(this.datasets[0].length != this.datasets[1].length || this.datasetsContainNaN || this.datasets[0].length == 0)
+    if(this.datasets[0].length != this.datasets[1].length)
     {
+      this.validateString = "Number of x values must match the number of y values.";
       return;
+    }
+    else if(this.datasets[0].length == 0)
+    {
+
     }
 
     // Generate LaGrange Polynomial

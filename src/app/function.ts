@@ -159,7 +159,7 @@ export class RPFunction
 			substitutions[variableIndex][1] = variableValue + h;
 			var y1 = this.evaluate(substitutions);
 			substitutions[variableIndex][1] = variableValue;
-			return (y1 - y0)/(2 * h);
+			return ((y1 - y0)/(2 * h)).toPrecision(4);
 		}
 		return 0;
 	}
