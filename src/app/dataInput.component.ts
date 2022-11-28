@@ -11,7 +11,7 @@ export class DataInputComponent {
   @ViewChild(FunctionInteractorComponent) functionInteractor: FunctionInteractorComponent;
 
   variable = "";
-  variables = [];
+  variables = ["x", "y"];
   datasetTexts = [];
   datasets = [];
   func;
