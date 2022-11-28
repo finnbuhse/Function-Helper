@@ -1,13 +1,19 @@
-<!--
+<!-- For more than two variables
 <input type="input" [(ngModel)]="variable"/>
 <button type="button" (click)="addVariable()">Add variable</button>
 <button type="button" (click)="clearVariables()">Delete variables</button> <br> -->
 <tr *ngFor="let var of variables; let i = index;">
   <td>
     <mat-form-field>
-      <input required matInput placeholder="{{variables[i]}} values" [name]="'set_' + i" type="text" [(ngModel)]="datasetTexts[i]"/>
+      <input required matInput placeholder="{{variables[i]}} values" [name]="'set_' + i" type="text" [(ngModel)]="datasetTexts[i]"/> <br>
     </mat-form-field>
   </td>
 </tr> <br>
+<div *ngIf="datasets[0].length != datasets[1].length">
+  <p> Number of x values must match the number of y values. </p>
+</div>
+<div *ngIf="datasetsContainNaN">
+<p> All data values must be real numbers. </p>
+</div>
 <button type="button" (click)="generateFunction()">Generate function</button>
 <functionInteractor></functionInteractor>

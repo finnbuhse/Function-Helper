@@ -13,7 +13,8 @@ export class DataInputComponent {
   variable = "";
   variables = ["x", "y"];
   datasetTexts = [];
-  datasets = [];
+  datasets = [[], []];
+  datasetsContainNaN = false;
   func;
   RPString = "";
 
@@ -30,6 +31,7 @@ export class DataInputComponent {
 
   generateFunction()
   {
+    this.datasetsContainNaN = false;
     // Parse strings into datasets
     for (var i = 0; i < this.datasetTexts.length; i++)
     {
@@ -38,8 +40,19 @@ export class DataInputComponent {
       this.datasets[i] = [];
       for (var j = 0; j < tempArray.length; j++)
       {
-        this.datasets[i].push(parseFloat(tempArray[j]));
+        var f = parseFloat(tempArray[j]);
+        console.log()
+        if(f == NaN)
+        {
+          this.datasetsContainNaN = true;
+          return;
+        }
+        this.datasets[i].push(f);
       }
+    }
+    if(this.datasets[0].length != this.datasets[1].length || this.datasets[0].length == 0)
+    {
+      return;
     }
 
     // Generate LaGrange Polynomial

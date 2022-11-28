@@ -3,10 +3,10 @@
 <tr *ngFor="let sub of substitutions; let i = index;">
   <td>
     <mat-form-field>
-      <input required matInput placeholder="Substitute {{substitutions[i][0]}}" [name]="'sub_' + i" type="number" [(ngModel)]="substitutions[i][1]"/>
+      <input required matInput placeholder="Substitute {{substitutions[i][0]}}" [name]="'sub_' + i" type="number" [(ngModel)]="substitutions[i][1]"/> <br>
     </mat-form-field>
   </td>
-</tr> <br>
+</tr>
 
 <button type="button" (click)="evaluate()">Evaluate</button>
 <p>{{evaluateResult}}</p>
