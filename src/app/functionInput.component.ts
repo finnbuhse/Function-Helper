@@ -15,6 +15,6 @@ export class FunctionInputComponent
 
   convert()
   {
-    this.functionInteractor.func.initialize(new RPFunction(parseStringToFunction(this.funcString)));
+    this.functionInteractor.initialize(new RPFunction(parseStringToFunction(this.funcString)));
   }
 }
