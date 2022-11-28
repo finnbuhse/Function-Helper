@@ -1,3 +1,6 @@
 <input type="text" [(ngModel)]="funcString"/>
 <button type="button" (click)="convert()">Convert</button>
+<div *ngIf="validateString != ''">
+  <p> {{validateString}} <p>
+</div>
 <functionInteractor></functionInteractor>

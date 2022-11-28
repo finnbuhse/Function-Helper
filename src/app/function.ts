@@ -353,7 +353,8 @@ export enum ValidateStringResult{
 	Empty,
 	NoSpacePrecedingOperator,
 	NoSpaceFollowingOperator,
-
+	SpaceFollowingOpenBracket,
+	SpacePrecedingCloseBracket
 }
 
 export function validateStringForFunction(string)
@@ -365,6 +366,7 @@ export function validateStringForFunction(string)
 
 	var lastWasSpace = false;
 	var lastWasOperator = false;
+	var lastWasOpenBracket = false;
 	for (var i = 0; i < string.length; i++)
 	{
 		if(string[i] == "+" || string[i] == "-" || string[i] == "*" || string[i] == "/" || string[i] == "^")
@@ -377,23 +379,47 @@ export function validateStringForFunction(string)
 			{
 				lastWasSpace = false;
 				lastWasOperator = true;
+				lastWasOpenBracket = false;
 			}
 		}
 		else if(string[i] == " ")
 		{
+			if(lastWasOpenBracket)
+			{
+				return ValidateStringResult.SpaceFollowingOpenBracket;
+			}
 			lastWasOperator = false;
 			lastWasSpace = true;
+			lastWasOpenBracket = false;
 		}
 		else if(lastWasOperator)
 		{
 			return ValidateStringResult.NoSpaceFollowingOperator;
 		}
+		else if(string[i] == "(")
+		{
+			lastWasOperator = false;
+			lastWasSpace = false;
+			lastWasOpenBracket = true;
+		}
+		else if(string[i] == ")")
+		{
+			if(lastWasSpace)
+			{
+				return ValidateStringResult.SpacePrecedingCloseBracket
+			}
+			lastWasOperator = false;
+			lastWasSpace = false;
+			lastWasOpenBracket = false;
+		}
 		else
 		{
 			lastWasOperator = false;
 			lastWasSpace = false;
+			lastWasOpenBracket = false;
 		}
 	}
+	return ValidateStringResult.Success;
 }
 
 export function parseStringToFunction(string)
