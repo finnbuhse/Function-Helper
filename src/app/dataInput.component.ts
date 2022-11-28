@@ -56,7 +56,7 @@ export class DataInputComponent {
     }
     else if(this.datasets[0].length == 0)
     {
-
+      return;
     }
 
     // Generate LaGrange Polynomial
