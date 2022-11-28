@@ -5,7 +5,7 @@ function logBase(base, x)
 	return Math.log(x)/Math.log(base);
 }
 
-class Operator
+export class Operator
 {
 	static Add = new Operator("+", 2, function(parameters) {
 		return parameters[0] + parameters[1];
@@ -52,7 +52,7 @@ class Operator
 	}
 }
 
-class Variable
+export class Variable
 {
   name = "";
 
@@ -79,7 +79,7 @@ function findVariable(substitutions, variableName)
 	return -1;
 }
 
-class RPFunction
+export class RPFunction
 {
   components = [];
   variableNames = [];
@@ -348,7 +348,7 @@ function makeSubstitution(substitutions, string, subString, subName, subComponen
 	return [substitutions, string];
 }
 
-function parseStringToFunction(string)
+export function parseStringToFunction(string)
 {
 	var components = [];
 	var substitutions = {};
@@ -498,7 +498,7 @@ function parseStringToFunction(string)
 	return components;
 }
 
-function solveNewtonRaphson(func, substitutions, solveVariable, var0, maximumIterations, iteration = 0)
+export function solveNewtonRaphson(func, substitutions, solveVariable, var0, maximumIterations, iteration = 0)
 {
 	iteration++;
 

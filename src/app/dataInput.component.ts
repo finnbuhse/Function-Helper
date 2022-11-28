@@ -1,6 +1,6 @@
 import { Compiler, Component, ElementRef, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { GraphComponent } from './graph.component';
-import './function.ts';
+import { Operator, Variable, RPFunction, parseStringToFunction, solveNewtonRaphson } from './function';
 
 @Component({
   selector: 'dataInput',
