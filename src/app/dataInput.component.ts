@@ -41,16 +41,14 @@ export class DataInputComponent {
       for (var j = 0; j < tempArray.length; j++)
       {
         var f = parseFloat(tempArray[j]);
-        console.log()
-        if(f == NaN)
+        if(isNaN(f))
         {
           this.datasetsContainNaN = true;
-          return;
         }
         this.datasets[i].push(f);
       }
     }
-    if(this.datasets[0].length != this.datasets[1].length || this.datasets[0].length == 0)
+    if(this.datasets[0].length != this.datasets[1].length || this.datasetsContainNaN || this.datasets[0].length == 0)
     {
       return;
     }

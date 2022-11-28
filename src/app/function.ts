@@ -348,6 +348,54 @@ function makeSubstitution(substitutions, string, subString, subName, subComponen
 	return [substitutions, string];
 }
 
+export enum ValidateStringResult{
+	Success,
+	Empty,
+	NoSpacePrecedingOperator,
+	NoSpaceFollowingOperator,
+
+}
+
+export function validateStringForFunction(string)
+{
+	if(string == "")
+	{
+		return ValidateStringResult.Empty;
+	}
+
+	var lastWasSpace = false;
+	var lastWasOperator = false;
+	for (var i = 0; i < string.length; i++)
+	{
+		if(string[i] == "+" || string[i] == "-" || string[i] == "*" || string[i] == "/" || string[i] == "^")
+		{
+			if(lastWasSpace == false)
+			{
+				return ValidateStringResult.NoSpacePrecedingOperator;
+			}
+			else
+			{
+				lastWasSpace = false;
+				lastWasOperator = true;
+			}
+		}
+		else if(string[i] == " ")
+		{
+			lastWasOperator = false;
+			lastWasSpace = true;
+		}
+		else if(lastWasOperator)
+		{
+			return ValidateStringResult.NoSpaceFollowingOperator;
+		}
+		else
+		{
+			lastWasOperator = false;
+			lastWasSpace = false;
+		}
+	}
+}
+
 export function parseStringToFunction(string)
 {
 	var components = [];
