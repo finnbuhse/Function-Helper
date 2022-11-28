@@ -13,6 +13,7 @@ export class DataInputComponent {
   datasetTexts = [];
   datasets = [];
   func;
+  RPString = "";
 
   clearVariables()
   {
@@ -27,12 +28,11 @@ export class DataInputComponent {
 
   generateFunction()
   {
+    // Parse strings into datasets
     for (var i = 0; i < this.datasetTexts.length; i++)
     {
       var tempString = this.datasetTexts[i].replace(/ /g, "");
-      console.log(tempString);
       var tempArray = tempString.split(",");
-      console.log(tempArray);
       this.datasets[i] = [];
       for (var j = 0; j < tempArray.length; j++)
       {
@@ -69,11 +69,14 @@ export class DataInputComponent {
       }
 
       functionComponents = functionComponents.concat(numeratorComponents.concat(denominatorComponents.concat(Operator.Divide)));
+      functionComponents = functionComponents.concat(this.datasets[1][i]);
+      functionComponents.push(Operator.Multiply);
       if(i > 0)
       {
         functionComponents.push(Operator.Add);
       }
     }
-    console.log(functionComponents);
+    this.func = new RPFunction(functionComponents);
+    this.RPString = this.func.toString();
   }
 }
