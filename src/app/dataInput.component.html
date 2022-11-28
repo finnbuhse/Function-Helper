@@ -1,6 +1,6 @@
 <input type="input" [(ngModel)]="variable"/>
 <button type="button" (click)="addVariable()">Add variable</button>
-<button type="button" (click)="clearVariables()">Delete variables</button>
+<button type="button" (click)="clearVariables()">Delete variables</button> <br>
 <tr *ngFor="let var of variables; let i = index;">
   <td>
     <mat-form-field>
