@@ -26,16 +26,18 @@ export class GraphComponent implements OnInit {
         type: 'linear',
         grid: {
           borderColor: 'red'
-        },
-        axis: 'x'
+        }//,
+        //axis: 'x',
+        //position: 'bottom'
       },
       y: {
         title: 'y',
         type: 'linear',
         grid: {
           borderColor: 'red'
-        },
-        axis: 'y'
+        }//,
+        //axis: 'y',
+        //position: 'left'
       }
     }
   };
@@ -43,8 +45,9 @@ export class GraphComponent implements OnInit {
 
   ngOnInit()
   {
-    var chartElement = document.getElementById("chart");
-    this.chart = new Chart(chartElement);
+    //var chartElement = document.getElementById("chart");
+    //this.chart = new Chart(chartElement);
+    //this.chart.update();
   }
 
   addPoint(point)
