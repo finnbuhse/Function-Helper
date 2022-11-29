@@ -66,14 +66,14 @@ export class FunctionInteractorComponent
 			data: range[1],
 			label: 'y',
 			type: 'line',
-			indexAxis: 'x'
-    	//xAxisID: 0,
-    	//yAxisID: 1
+    	xAxisID: 'x',
+    	yAxisID: 'y'
 		}, {
 			data: [],
 			label: 'Roots',
 			type: 'line',
-			indexAxis: 'x',
+			xAxisID: 'x',
+    	yAxisID: 'y',
 			showLine: false,
 		}
 		];

@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 
 @Component({
@@ -15,7 +15,7 @@ import { Chart } from 'chart.js';
     `,
     styleUrls: ['./appStyle.css']
 })
-export class GraphComponent  {
+export class GraphComponent implements OnInit {
   datasets = [];
   labels = [];
   chartOptions = {
@@ -37,9 +37,17 @@ export class GraphComponent  {
       }
     }
   };
+  chart: Chart;
+
+  ngOnInit()
+  {
+    var chartElement = document.getElementById("chart");
+    this.chart = new Chart(chartElement);
+  }
 
   addPoint(point)
   {
     this.datasets[1].data.push({x: point[0], y: point[1]});
+    this.chart.update();
   }
 }
