@@ -47,10 +47,12 @@ export class GraphComponent implements OnInit {
   {
     var chartElement = document.getElementById("chart");
     this.chart = new Chart(chartElement);
+    console.log("CHART INITIALIZED");
   }
 
   addPoint(point)
   {
     this.datasets[1].data.push({x: point[0], y: point[1]});
+    this.chart.update();
   }
 }
