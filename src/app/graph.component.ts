@@ -45,14 +45,13 @@ export class GraphComponent implements OnInit {
 
   ngOnInit()
   {
-    //var chartElement = document.getElementById("chart");
-    //this.chart = new Chart(chartElement);
-    //this.chart.update();
+    var chartElement = document.getElementById("chart");
+    this.chart = new Chart(chartElement);
   }
 
   addPoint(point)
   {
     this.datasets[1].data.push({x: point[0], y: point[1]});
-    //this.chart.update();
+    this.chart.update();
   }
 }
