@@ -23,23 +23,24 @@ export class GraphComponent implements OnInit {
     scales: {
       xAxes: [{
         title: 'x',
+        id: 'xAxis1',
         type: 'linear',
         grid: {
           borderColor: 'red'
         },
-        axis: 'x',
         position: 'bottom'
       }],
       yAxes: [{
         title: 'y',
+        id: 'yAxis1',
         type: 'linear',
         grid: {
           borderColor: 'red'
         },
-        axis: 'y',
         position: 'left'
       }]
-    }
+    },
+    onResize: this.resize
   };
   chart: Chart;
 
@@ -49,9 +50,13 @@ export class GraphComponent implements OnInit {
     this.chart = new Chart(chartElement);
   }
 
+  resize()
+  {
+    this.chart.update();
+  }
+
   addPoint(point)
   {
     this.datasets[1].data.push({x: point[0], y: point[1]});
-    //this.chart.update();
   }
 }
