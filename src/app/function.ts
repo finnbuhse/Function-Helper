@@ -510,7 +510,6 @@ export function parseStringToFunction(string)
 	while(indice != -1)
 	{
 		var parsed = parseOperator(substitutions, string, indice, "^");
-		console.log(parsed);
 		var subName = "c" + Object.keys(substitutions).length.toString();
 		var sub = makeSubstitution(substitutions, string, parsed[1], subName, parsed[0]);
 		substitutions = sub[0];
