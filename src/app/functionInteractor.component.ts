@@ -86,6 +86,6 @@ export class FunctionInteractorComponent
 			this.solveResult = 0;
 			return;
 		}
-		this.graph.addPoint([this.solveResult, 0]);
+		this.graph.addPoint(1, [this.solveResult, 0]);
 	}
 }

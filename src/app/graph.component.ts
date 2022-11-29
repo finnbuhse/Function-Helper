@@ -50,9 +50,10 @@ export class GraphComponent implements OnInit {
     console.log("CHART INITIALIZED");
   }
 
-  addPoint(point)
+  addPoint(datasetIndex, point)
   {
-    this.datasets[1].data.push({x: point[0], y: point[1]});
+    this.datasets[datasetIndex].data.push({x: point[0], y: point[1]});
     this.chart.update();
+    console.log("CHART UPDATED");
   }
 }
