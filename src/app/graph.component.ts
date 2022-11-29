@@ -40,7 +40,6 @@ export class GraphComponent  {
 
   addPoint(point)
   {
-    this.labels.push(point[0]);
-    this.datasets[0].data.push(point[1]);
+    this.datasets[1].data.push({x: point[0], y: point[1]});
   }
 }
