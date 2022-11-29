@@ -21,24 +21,24 @@ export class GraphComponent implements OnInit {
   chartOptions = {
     responsive: true,
     scales: {
-      x: {
+      xAxes: [{
         title: 'x',
         type: 'linear',
         grid: {
           borderColor: 'red'
-        }//,
-        //axis: 'x',
-        //position: 'bottom'
-      },
-      y: {
+        },
+        axis: 'x',
+        position: 'bottom'
+      }],
+      yAxes: [{
         title: 'y',
         type: 'linear',
         grid: {
           borderColor: 'red'
-        }//,
-        //axis: 'y',
-        //position: 'left'
-      }
+        },
+        axis: 'y',
+        position: 'left'
+      }]
     }
   };
   chart: Chart;
