@@ -26,14 +26,16 @@ export class GraphComponent implements OnInit {
         type: 'linear',
         grid: {
           borderColor: 'red'
-        }
+        },
+        axis: 'x'
       },
       y: {
         title: 'y',
         type: 'linear',
         grid: {
           borderColor: 'red'
-        }
+        },
+        axis: 'y'
       }
     }
   };
@@ -48,6 +50,6 @@ export class GraphComponent implements OnInit {
   addPoint(point)
   {
     this.datasets[1].data.push({x: point[0], y: point[1]});
-    this.chart.update();
+    //this.chart.update();
   }
 }
