@@ -67,6 +67,7 @@ export class FunctionInteractorComponent
 			label: 'y',
 			type: 'line',
     	xAxisID: 'xAxis1',
+			showPoints: false
 		}, {
 			data: [],
 			label: 'Roots',
