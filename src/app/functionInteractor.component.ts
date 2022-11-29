@@ -62,12 +62,22 @@ export class FunctionInteractorComponent
 	{
 		 var range = this.func.evaluateRange(this.substitutions, this.plotIncrementVariable, this.plotVariableStart, this.plotVariableEnd, this.plotIncrement);
 
-		 this.graph.datasets = [range[1]];
-		 this.graph.labels = range[0].data;
+		 this.graph.datasets = [{ 
+			data: range[1],
+			label: 'x',
+			type: 'line'
+		}];
+		 this.graph.labels = range[0];
 	}
 
 	solve()
 	{
 		this.solveResult = solveNewtonRaphson(this.func, this.substitutions, this.solveVariable, this.variableStart, 500)[0];
+		if(isNaN(this.solveResult))
+		{
+			this.solveResult = 0;
+			return;
+		}
+		this.graph.addPoint([this.solveResult, 0]);
 	}
 }

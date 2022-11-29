@@ -184,7 +184,7 @@ export class RPFunction
 			}
 		
 			substitutions[variableIndex][1] = variableValue;
-			return [ {data: vardata, label: incrementVariable}, {data: ydata, label: "y"} ];
+			return [ vardata, ydata ];
 		}
 		return [];
 	}
