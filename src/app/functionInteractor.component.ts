@@ -63,8 +63,11 @@ export class FunctionInteractorComponent
 		 var range = this.func.evaluateRange(this.substitutions, this.plotIncrementVariable, this.plotVariableStart, this.plotVariableEnd, this.plotIncrement);
 
 		 this.graph.datasets = [{ 
+			data: range[0],
+			label: 'x'
+		}, {
 			data: range[1],
-			label: 'x',
+			label: 'y',
 			type: 'line'
 		}];
 		 this.graph.labels = range[0];

@@ -16,7 +16,7 @@ import { Chart } from 'chart.js';
     styleUrls: ['./appStyle.css']
 })
 export class GraphComponent  {
-  @ViewChild(Chart) chart: Chart;
+  //@ViewChild(Chart) chart: Chart;
 
   datasets = [];
   labels = [];
@@ -28,13 +28,14 @@ export class GraphComponent  {
     },
     indexAxis: 'x',
     xAxisID: 0,
-    yAxisID: 0
+    yAxisID: 1
   };
 
   addPoint(point)
   {
     this.labels.push(point[0]);
-    this.datasets[0].data.push(point[1]);
-    this.chart.update();
+    this.datasets[0].data.push(point[0]);
+    this.datasets[1].data.push(point[1]);
+    //this.chart.update();
   }
 }
