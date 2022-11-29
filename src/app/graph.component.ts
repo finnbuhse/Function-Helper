@@ -39,8 +39,7 @@ export class GraphComponent implements OnInit {
         },
         position: 'left'
       }]
-    },
-    onResize: this.resize
+    }
   };
   chart: Chart;
 
@@ -48,11 +47,6 @@ export class GraphComponent implements OnInit {
   {
     var chartElement = document.getElementById("chart");
     this.chart = new Chart(chartElement);
-  }
-
-  resize()
-  {
-    this.chart.update();
   }
 
   addPoint(point)
