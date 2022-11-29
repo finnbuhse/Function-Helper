@@ -7,7 +7,7 @@ import { Chart } from 'chart.js';
   <div style="width: 50%;">
     <canvas baseChart id="chart"
       [chartType]="'line'"
-      [legend]="false"
+      [legend]="true"
       [datasets]="datasets"
       [labels]="labels"
       [options]="chartOptions">
@@ -16,26 +16,31 @@ import { Chart } from 'chart.js';
     styleUrls: ['./appStyle.css']
 })
 export class GraphComponent  {
-  //@ViewChild(Chart) chart: Chart;
-
   datasets = [];
   labels = [];
   chartOptions = {
     responsive: true,
-    interaction: {
-      // Overrides the global setting
-      mode: 'index'
-    },
-    indexAxis: 'x',
-    xAxisID: 0,
-    yAxisID: 1
+    scales: {
+      x: {
+        title: 'x',
+        type: 'linear',
+        grid: {
+          borderColor: 'red'
+        }
+      },
+      y: {
+        title: 'y',
+        type: 'linear',
+        grid: {
+          borderColor: 'red'
+        }
+      }
+    }
   };
 
   addPoint(point)
   {
     this.labels.push(point[0]);
-    this.datasets[0].data.push(point[0]);
-    this.datasets[1].data.push(point[1]);
-    //this.chart.update();
+    this.datasets[0].data.push(point[1]);
   }
 }

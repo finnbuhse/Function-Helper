@@ -173,18 +173,16 @@ export class RPFunction
 			var variableValue = substitutions[variableIndex][1];
 			substitutions[variableIndex][1] = incrementVariableStart;
 
-			var vardata = [];
-			var ydata = [];
+			var data = [];
 			while (substitutions[variableIndex][1] <= incrementVariableEnd)
 			{
-				var y = this.evaluate(substitutions);
-				vardata.push(substitutions[variableIndex][1]);
-				ydata.push(y);
+				var yVal = this.evaluate(substitutions);
+				data.push({ x: substitutions[variableIndex][1], y: yVal});
 				substitutions[variableIndex][1] += increment;
 			}
 		
 			substitutions[variableIndex][1] = variableValue;
-			return [ vardata, ydata ];
+			return data;
 		}
 		return [];
 	}
