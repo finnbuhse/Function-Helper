@@ -3,7 +3,7 @@
 Description:
 Enables users to calculate the value, gradient, roots, and also plot a function of thier choice.
 
-There is a specific syntax that is supported:
+You can enter a function as text however, there is a specific syntax that is supported:
   - Scalars infront of variables cannot be written '5x' but must be written '5 * x' for example.
   - Powers should be written as follows: 'x ^ power'.
   - Similarly, +, -, and / operators must have a space between them and thier parameters.
@@ -12,9 +12,9 @@ There is a specific syntax that is supported:
   - sin, cos, and tan are also supported and are written sin(x), cos(x), and tan(x) respectively.
 
 Examples:
-'x ^ 2 - 1'
-'(100 - x ^ 2) ^ 0.5'
-'tan(sin(x))'
-'cos(log(10, x))'
+  - 'x ^ 2 - 1'
+  - '(100 - x ^ 2) ^ 0.5'
+  - 'tan(sin(x))'
+  - 'cos(log(10, x))'
 
 Alternatively, one can define a function via data . Currently, only 2 dimensional data is supported (points), so you must enter 'x' and 'y' values. Once the generate function button is pressed a LaGrange polynomial that satifies the data is generated.
