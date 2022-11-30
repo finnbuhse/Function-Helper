@@ -11,4 +11,10 @@ There is a specific syntax that is supported:
   - logarithms are supported and should be written log(base, x)
   - sin, cos, and tan are also supported and are written sin(x), cos(x), and tan(x) respectively.
 
-Alternatively, one can define a function via data. Currently, only 2 dimensional data is supported, so you must enter 'x' and 'y' values. Once the generate function button is pressed a LaGrange polynomial that satifies the data is generated.
+Examples:
+'x ^ 2 - 1'
+'(100 - x ^ 2) ^ 0.5'
+'tan(sin(x))'
+'cos(log(10, x))'
+
+Alternatively, one can define a function via data . Currently, only 2 dimensional data is supported (points), so you must enter 'x' and 'y' values. Once the generate function button is pressed a LaGrange polynomial that satifies the data is generated.
