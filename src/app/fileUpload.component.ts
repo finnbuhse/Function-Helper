@@ -2,7 +2,7 @@ import { Component, Input, ViewChild, OnInit } from '@angular/core';
 
 @Component({
   selector: 'fileUpload',
-  templateUrl: './fileUpload.component',
+  templateUrl: './fileUpload.component.html',
   styleUrls: ['./appStyle.css']
 })
 export class FileUploadComponent {
@@ -11,7 +11,6 @@ export class FileUploadComponent {
   onFileSelected(event) {
 
     const file:File = event.target.files[0];
-
     if (file) {
       this.filename = file.name;
 
