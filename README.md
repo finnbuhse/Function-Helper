@@ -1,7 +1,5 @@
 # Function-Helper
 
-A live deployment of the app can be found at https://function-helper.firebaseapp.com .
-
 Description:
 Enables users to calculate the value, gradient, roots, and also plot a function of their choice.
 
