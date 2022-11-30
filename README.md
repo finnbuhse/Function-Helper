@@ -10,8 +10,9 @@ You can enter a function as text however, there is a specific syntax that is sup
   - Powers should be written as follows: 'x ^ power'.
   - Similarly, +, -, and / operators must have a space between them and their parameters.
   - There should never be a space immedietely following an open bracket, or preceding a closing bracket. For example '( x + 4 )' is invalid and should be written '(x + 4)' instead.
-  - logarithms are supported and should be written log(base, x)
-  - sin, cos, and tan are also supported and are written sin(x), cos(x), and tan(x) respectively.
+  - Logarithms are supported and should be written log(base, x)
+  - Sin, Cos, and Tan are also supported and are written sin(x), cos(x), and tan(x) respectively.
+  - Variables are required to be 1 character.
 
 Examples:
   - 'x ^ 2 - 1' [Has solutions]
