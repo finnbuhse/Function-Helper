@@ -12,9 +12,10 @@ You can enter a function as text however, there is a specific syntax that is sup
   - sin, cos, and tan are also supported and are written sin(x), cos(x), and tan(x) respectively.
 
 Examples:
-  - 'x ^ 2 - 1'
-  - '(100 - x ^ 2) ^ 0.5'
-  - 'tan(sin(x))'
-  - 'cos(log(10, x))'
+  - 'x ^ 2 - 1' [Has solutions]
+  - '(100 - x ^ 2) ^ 0.5' [Does not have solutions]
+  - 'tan(sin(x))' [Has solutions]
+  - 'cos(log(10, x))' [Has solutions]
+  - 'cos(log(b, x))' [Has solutions provided b > 0]
 
 Alternatively, one can define a function via data . Currently, only 2 dimensional data is supported (points), so you must enter 'x' and 'y' values. Once the generate function button is pressed a LaGrange polynomial that satifies the data is generated.
