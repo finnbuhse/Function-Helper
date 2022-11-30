@@ -13,20 +13,19 @@ export class FileUploadComponent {
     const file:File = event.target.files[0];
 
     if (file) {
+      this.filename = file.name;
 
-        this.filename = file.name;
+      const formData = new FormData();
 
-        const formData = new FormData();
+      formData.append("thumbnail", file);
 
-        formData.append("thumbnail", file);
+      console.log(this.filename);
 
-        console.log(this.filename);
+      /*
+      const upload$ = this.http.post("/api/thumbnail-upload", formData);
 
-        /*
-        const upload$ = this.http.post("/api/thumbnail-upload", formData);
-
-        upload$.subscribe();
-        */
+      upload$.subscribe();
+      */
     }
-}
+  }
 }
