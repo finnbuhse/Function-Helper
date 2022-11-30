@@ -1,0 +1,11 @@
+<input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+
+<div class="file-upload">
+  <div *ngIf="filename==''">
+    <p> Upload a file </p>
+  </div>
+  <button type="button" class="upload-btn" (click)="fileUpload.click()">
+      <!--<mat-icon>attach_file</mat-icon>-->
+      Upload from file
+  </button>
+</div>

@@ -11,10 +11,11 @@ import { GraphComponent } from './graph.component';
 import { FunctionInteractorComponent } from './functionInteractor.component';
 import { FunctionInputComponent } from './functionInput.component';
 import { DataInputComponent } from './dataInput.component';
+import { FileUploadComponent } from './fileUpload.component';
 
 @NgModule({
   imports:      [ BrowserModule, BrowserAnimationsModule, FormsModule, MatInputModule, MatFormFieldModule, ChartsModule ],
-  declarations: [ AppComponent, GraphComponent, FunctionInteractorComponent, FunctionInputComponent, DataInputComponent ],
+  declarations: [ AppComponent, GraphComponent, FunctionInteractorComponent, FunctionInputComponent, DataInputComponent, FileUploadComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule {
