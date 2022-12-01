@@ -6,7 +6,7 @@ export class Socket
 
   constructor(url)
   {
-    this.socket = io(url, { transports: ["websocket"] } )
+    this.socket = io(url, { transports: ["websocket"] } );
   }
 }
 
