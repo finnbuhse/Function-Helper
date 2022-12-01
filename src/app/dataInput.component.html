@@ -2,15 +2,23 @@
 <input type="input" [(ngModel)]="variable"/>
 <button type="button" (click)="addVariable()">Add variable</button>
 <button type="button" (click)="clearVariables()">Delete variables</button> <br> -->
-<tr *ngFor="let var of variables; let i = index;">
-  <td>
-    <mat-form-field>
-      <input required matInput placeholder="{{variables[i]}} values" [name]="'set_' + i" type="text" [(ngModel)]="datasetTexts[i]"/> <br>
-    </mat-form-field>
-  </td>
-</tr> <br>
-<div *ngIf="validateString != ''">
-  <p> {{validateString}} </p>
+<div class="row">
+  <div class="column">
+    <tr *ngFor="let var of variables; let i = index;">
+      <td>
+        <mat-form-field>
+          <input required matInput placeholder="{{variables[i]}} values" [name]="'set_' + i" type="text" [(ngModel)]="datasetTexts[i]"/> <br>
+        </mat-form-field>
+      </td>
+    </tr> <br>
+    <div *ngIf="validateString != ''">
+      <p> {{validateString}} </p>
+    </div>
+    <button type="button" (click)="generateFunction()">Generate function</button>
+    <functionInteractor></functionInteractor>
+  </div>
+  <div class="column">
+    <fileUpload></fileUpload>
+  </div>
+
 </div>
-<button type="button" (click)="generateFunction()">Generate function</button>
-<functionInteractor></functionInteractor>
