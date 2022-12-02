@@ -44,13 +44,7 @@ export class Socket
 @Injectable()
 export class SocketManager
 {
-  ipAddress;
   sockets = []
-
-  constructor(/*private http:HttpClient = null*/)
-  {
-    //this.http.get(CLIENT_URL).subscribe((res:any)=>{this.ipAddress = res.ip;});
-  }
 
   getSocket(url, protocols = [], forceNew = false)
   {
@@ -73,10 +67,5 @@ export class SocketManager
     var socket = new Socket(url, protocols);
     this.sockets.push(socket);
     return socket;
-  }
-
-  getIP()
-  {
-    return this.ipAddress;
   }
 }
