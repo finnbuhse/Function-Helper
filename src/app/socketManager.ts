@@ -46,13 +46,6 @@ export class SocketManager
   ipAddress;
   sockets = []
 
-  static instance;
-
-  static getInstance()
-  {
-    return this.instance;
-  }
-
   constructor(private http:HttpClient = null)
   {
     this.http.get(CLIENT_URL).subscribe((res:any)=>{this.ipAddress = res.ip;});
