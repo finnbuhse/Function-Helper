@@ -13,8 +13,6 @@ export class FileUploadComponent {
 
   constructor(private socketManager: SocketManager)
   {
-    this.socketManager = SocketManager.getInstance();
-    console.log(this.socketManager);
   }
 
   onFileSelected(event) {

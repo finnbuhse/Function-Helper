@@ -49,7 +49,6 @@ export class SocketManager
   constructor(private http:HttpClient = null)
   {
     this.http.get(CLIENT_URL).subscribe((res:any)=>{this.ipAddress = res.ip;});
-    SocketManager.instance = this;
   }
 
   getSocket(url, protocols = [], forceNew = false)
