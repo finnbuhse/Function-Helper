@@ -31,3 +31,38 @@ export class Socket
     console.log(event.data);
   }
 }
+
+export class SocketManager
+{
+  sockets = []
+
+  static instance = new SocketManager();
+
+  static getInstance()
+  {
+    return this.instance;
+  }
+
+  getSocket(url, protocols = [], forceNew = false)
+  {
+    if(!forceNew)
+    {
+      for (var i = 0; i < this.sockets.length; i++)
+      {
+        for (var j = 0; j < protocols.length; j++)
+        {
+          if(this.sockets[i].protocol == protocols[j])
+          {
+            if(this.sockets[i].url == url)
+            {
+              return this.sockets[i];
+            }
+          }
+        }
+      }
+    }
+    var socket = new Socket(url, protocols);
+    this.sockets.push(socket);
+    return socket;
+  }
+}

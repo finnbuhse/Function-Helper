@@ -1,4 +1,5 @@
 import { Component, Input, ViewChild, OnInit } from '@angular/core';
+import { Socket, SocketManager } from './socketManager';
 
 @Component({
   selector: 'fileUpload',
@@ -6,6 +7,9 @@ import { Component, Input, ViewChild, OnInit } from '@angular/core';
   styleUrls: ['./appStyle.css']
 })
 export class FileUploadComponent {
+  socketManager = SocketManager.getInstance();
+  serverSocket: Socket;
+
   filename = "";
 
   onFileSelected(event) {
@@ -19,6 +23,8 @@ export class FileUploadComponent {
       formData.append("thumbnail", file);
 
       console.log(this.filename);
+
+      this.serverSocket = this.socketManager.getSocket("192.168.1.254");
 
       /*
       const upload$ = this.http.post("/api/thumbnail-upload", formData);
