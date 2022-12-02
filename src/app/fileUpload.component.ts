@@ -27,8 +27,6 @@ export class FileUploadComponent {
 
       console.log(this.filename);
 
-      console.log("Client site IP address: ", this.socketManager.getIP());
-
       this.serverSocket = this.socketManager.getSocket(SERVER_URL);
 
       /*
