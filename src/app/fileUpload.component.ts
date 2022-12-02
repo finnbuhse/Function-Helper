@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild, OnInit } from '@angular/core';
-import { Socket, SocketManager } from './socketManager';
+import { CLIENT_URL, Socket, SocketManager } from './socketManager';
 
 @Component({
   selector: 'fileUpload',
@@ -23,6 +23,8 @@ export class FileUploadComponent {
       formData.append("thumbnail", file);
 
       console.log(this.filename);
+
+      console.log("Client site IP address: ", this.socketManager.getIP());
 
       this.serverSocket = this.socketManager.getSocket(CLIENT_URL);
 
