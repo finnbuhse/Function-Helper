@@ -29,6 +29,8 @@ export class FileUploadComponent {
 
       this.serverSocket = this.socketManager.getSocket(SERVER_URL);
 
+      this.serverSocket.send("This is a message from the client site.");
+
       /*
       const upload$ = this.http.post("/api/thumbnail-upload", formData);
 
