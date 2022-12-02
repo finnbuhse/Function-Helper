@@ -11,15 +11,18 @@ export class Socket
   {
     this.socket = new WebSocket(url, protocols);
     console.log("Connecting to server...");
+    /*
     while(this.socket.readyState == this.socket.CONNECTING) {
       console.log("Waiting...")
 
     }
+
     if(this.socket.readyState != this.socket.OPEN)
     {
       console.log("[ERROR] Failed to establish connection to server.");
       return;
     }
+    */
     console.log("Successfully connected to the server.");
 
     this.socket.onmessage = (event) => this.recieve(event);
