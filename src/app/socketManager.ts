@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 
 export const CLIENT_URL = "wss://199.36.158.100";
-export const SERVER_URL = "wss://192.168.1.254:27015";
+export const SERVER_URL = /*CG "wss://192.168.1.254:27015"*/ "wss://192.168.1.83:27015";
 
 export class Socket
 {
