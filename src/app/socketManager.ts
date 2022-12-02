@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 export const CLIENT_URL = "wss://199.36.158.100";
-export const SERVER_URL = "wss://192.168.1.254";
+export const SERVER_URL = "wss://192.168.1.254:27015";
 
 export class Socket
 {
