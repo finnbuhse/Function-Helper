@@ -14,9 +14,12 @@ import { FunctionInputComponent } from './functionInput.component';
 import { DataInputComponent } from './dataInput.component';
 import { FileUploadComponent } from './fileUpload.component';
 
+import { SocketManager } from './socketManager';
+
 @NgModule({
   imports:      [ BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule, MatInputModule, MatFormFieldModule, ChartsModule ],
   declarations: [ AppComponent, GraphComponent, FunctionInteractorComponent, FunctionInputComponent, DataInputComponent, FileUploadComponent ],
+  providers: [ SocketManager ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule {
