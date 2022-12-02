@@ -3,7 +3,8 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
-export const CLIENT_URL = "wss://angular-ivy-ojsflr.stackblitz.io";
+export const CLIENT_URL = "ws://199.36.158.100";
+export const SERVER_URL = "ws://192.168.1.254";
 
 export class Socket
 {
@@ -46,9 +47,9 @@ export class SocketManager
   ipAddress;
   sockets = []
 
-  constructor(private http:HttpClient = null)
+  constructor(/*private http:HttpClient = null*/)
   {
-    this.http.get(CLIENT_URL).subscribe((res:any)=>{this.ipAddress = res.ip;});
+    //this.http.get(CLIENT_URL).subscribe((res:any)=>{this.ipAddress = res.ip;});
   }
 
   getSocket(url, protocols = [], forceNew = false)

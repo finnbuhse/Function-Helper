@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild, OnInit } from '@angular/core';
-import { CLIENT_URL, Socket, SocketManager } from './socketManager';
+import { SERVER_URL, CLIENT_URL, Socket, SocketManager } from './socketManager';
 
 @Component({
   selector: 'fileUpload',
@@ -29,7 +29,7 @@ export class FileUploadComponent {
 
       console.log("Client site IP address: ", this.socketManager.getIP());
 
-      this.serverSocket = this.socketManager.getSocket(CLIENT_URL);
+      this.serverSocket = this.socketManager.getSocket(SERVER_URL);
 
       /*
       const upload$ = this.http.post("/api/thumbnail-upload", formData);
