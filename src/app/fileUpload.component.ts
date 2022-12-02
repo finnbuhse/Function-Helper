@@ -7,10 +7,16 @@ import { CLIENT_URL, Socket, SocketManager } from './socketManager';
   styleUrls: ['./appStyle.css']
 })
 export class FileUploadComponent {
-  socketManager = SocketManager.getInstance();
+  socketManager: SocketManager;
   serverSocket: Socket;
 
   filename = "";
+
+  constructor()
+  {
+    this.socketManager = SocketManager.getInstance();
+    console.log(this.socketManager);
+  }
 
   onFileSelected(event) {
 

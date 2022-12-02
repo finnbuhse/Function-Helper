@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
+import { SocketManager } from './socketManager';
 import { GraphComponent } from './graph.component';
 import { FunctionInteractorComponent } from './functionInteractor.component';
 import { FunctionInputComponent } from './functionInput.component';
@@ -16,7 +17,7 @@ import { FileUploadComponent } from './fileUpload.component';
 
 @NgModule({
   imports:      [ BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule, MatInputModule, MatFormFieldModule, ChartsModule ],
-  declarations: [ AppComponent, GraphComponent, FunctionInteractorComponent, FunctionInputComponent, DataInputComponent, FileUploadComponent ],
+  declarations: [ AppComponent, SocketManager, GraphComponent, FunctionInteractorComponent, FunctionInputComponent, DataInputComponent, FileUploadComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule {
