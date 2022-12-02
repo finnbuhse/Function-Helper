@@ -1,19 +1,33 @@
-import { io } from 'socket.io-client';
-
 export class Socket
 {
-  socket;
+  socket: WebSocket;
 
-  constructor(url)
+  constructor(url, protocols = [])
   {
-    this.socket = io(url, { transports: ["websocket"] } );
+    this.socket = new WebSocket(url, protocols);
+    while(this.socket.readyState == this.socket.CONNECTING) {}
+    if(this.socket.readyState != this.socket.OPEN)
+    {
+      console.log("[ERROR] Failed to establish connection to server.");
+      return;
+    }
+    console.log("Successfully connected to the server.");
+
+    this.socket.onmessage = (event) => this.recieve(event);
   }
-}
 
-export class SocketManager
-{
-  constructor()
+  close()
   {
-    
+    this.socket.close();
+  }
+
+  send(data)
+  {
+    this.socket.send(data);
+  }
+
+  recieve(event)
+  {
+    console.log(event.data);
   }
 }
