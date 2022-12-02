@@ -9,6 +9,7 @@ export class Socket
   constructor(url, protocols = [])
   {
     this.socket = new WebSocket(url, protocols);
+    console.log("Connecting to server...");
     while(this.socket.readyState == this.socket.CONNECTING) {}
     if(this.socket.readyState != this.socket.OPEN)
     {
