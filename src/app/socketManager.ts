@@ -1,3 +1,7 @@
+import { HttpClient } from "@angular/common/http";
+
+export const CLIENT_URL = "wss://angular-ivy-ojsflr.stackblitz.io";
+
 export class Socket
 {
   socket: WebSocket;
@@ -34,6 +38,7 @@ export class Socket
 
 export class SocketManager
 {
+  ipAddress;
   sockets = []
 
   static instance = new SocketManager();
@@ -41,6 +46,11 @@ export class SocketManager
   static getInstance()
   {
     return this.instance;
+  }
+
+  constructor(private http:HttpClient = null)
+  {
+    this.http.get(CLIENT_URL).subscribe((res:any)=>{this.ipAddress = res.ip;});
   }
 
   getSocket(url, protocols = [], forceNew = false)
@@ -64,5 +74,10 @@ export class SocketManager
     var socket = new Socket(url, protocols);
     this.sockets.push(socket);
     return socket;
+  }
+
+  getIP()
+  {
+    return this.ipAddress;
   }
 }
