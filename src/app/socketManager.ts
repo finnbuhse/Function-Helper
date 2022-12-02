@@ -1,4 +1,7 @@
+import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 export const CLIENT_URL = "wss://angular-ivy-ojsflr.stackblitz.io";
 
@@ -37,12 +40,13 @@ export class Socket
   }
 }
 
+@Injectable()
 export class SocketManager
 {
   ipAddress;
   sockets = []
 
-  static instance = new SocketManager();
+  static instance;
 
   static getInstance()
   {
@@ -52,6 +56,7 @@ export class SocketManager
   constructor(private http:HttpClient = null)
   {
     this.http.get(CLIENT_URL).subscribe((res:any)=>{this.ipAddress = res.ip;});
+    SocketManager.instance = this;
   }
 
   getSocket(url, protocols = [], forceNew = false)
