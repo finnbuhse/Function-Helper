@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild, OnInit } from '@angular/core';
-import { SERVER_URL, CLIENT_URL, Socket, SocketManager } from './socketManager';
+import { SERVER_URL, Socket, SocketManager } from './socketManager';
 
 @Component({
   selector: 'fileUpload',

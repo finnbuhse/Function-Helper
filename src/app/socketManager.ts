@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 
-export const CLIENT_URL = "wss://199.36.158.100";
-export const SERVER_URL = /*CG "wss://192.168.1.254:27015"*/ "wss://192.168.1.83:27015";
+export const PORT = "27015";
+export const SERVER_URL = /*CG "wss://192.168.1.254:27015"*/ "wss://192.168.1.83:" + PORT;
 
 export class Socket
 {
@@ -10,7 +10,7 @@ export class Socket
   constructor(url, protocols = [])
   {
     this.socket = new WebSocket(url, protocols);
-    console.log("Connecting to server...");
+    console.log("Connecting to server on port");
     while(this.socket.readyState == this.socket.CONNECTING) {}
     if(this.socket.readyState != this.socket.OPEN)
     {
