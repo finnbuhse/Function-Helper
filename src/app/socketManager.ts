@@ -16,6 +16,11 @@ export class Socket
     this.socket.onmessage = (event) => { this.recieve(event) };
 
     console.log("Connecting to server on port " + PORT);
+
+    while(this.socket.readyState == this.socket.CONNECTING)
+    {
+      
+    }
   }
 
   open(event)
