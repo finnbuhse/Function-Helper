@@ -23,8 +23,6 @@ export class Socket
       return;
     }
     console.log("Successfully connected to the server.");
-
-    
   }
 
   open(event)
