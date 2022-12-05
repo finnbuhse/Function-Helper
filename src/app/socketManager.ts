@@ -15,14 +15,7 @@ export class Socket
     this.socket.onerror = (event) => { this.error(event) };
     this.socket.onmessage = (event) => { this.recieve(event) };
 
-    console.log("Connecting to server on port");
-    while(this.socket.readyState == this.socket.CONNECTING) {}
-    if(this.socket.readyState != this.socket.OPEN)
-    {
-      console.log("[ERROR] Failed to establish connection to server.");
-      return;
-    }
-    console.log("Successfully connected to the server.");
+    console.log("Connecting to server on port " + PORT);
   }
 
   open(event)
