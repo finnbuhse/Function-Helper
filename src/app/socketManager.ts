@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 
 export const PORT = "27015";
-export const SERVER_URL = /*CG "wss://192.168.1.254:27015"*/ "wss://192.168.1.83:" + PORT;
+export const SERVER_URL = /*Common Gateway: "wss://192.168.1.254:27015", IP Address:*/ "wss://192.168.1.83:" + PORT;
 
 export class Socket
 {
@@ -10,6 +10,11 @@ export class Socket
   constructor(url, protocols = [])
   {
     this.socket = new WebSocket(url, protocols);
+    this.socket.onopen = (event) => { this.open(event) };
+    this.socket.onclose = (event) => { this.close(event) };
+    this.socket.onerror = (event) => { this.error(event) };
+    this.socket.onmessage = (event) => { this.recieve(event) };
+
     console.log("Connecting to server on port");
     while(this.socket.readyState == this.socket.CONNECTING) {}
     if(this.socket.readyState != this.socket.OPEN)
@@ -19,13 +24,23 @@ export class Socket
     }
     console.log("Successfully connected to the server.");
 
-    this.socket.onmessage = (event) => { this.recieve(event) };
-    this.socket.onopen = function() { console.log("Socket opened.") }
+    
   }
 
-  close()
+  open(event)
+  {
+    console.log("Socket opened.")
+  }
+
+  close(event)
   {
     this.socket.close();
+    console.log("Socket closed.")
+  }
+
+  error(event)
+  {
+    console.log('[WebSocket ERROR]: ', event);
   }
 
   send(data)
