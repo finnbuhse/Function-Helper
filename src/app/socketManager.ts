@@ -6,6 +6,7 @@ export const SERVER_URL = /*Common Gateway: "wss://192.168.1.254:27015", IP Addr
 export class Socket
 {
   socket: WebSocket;
+  isOpen = false;
 
   constructor(url, protocols = [])
   {
@@ -16,21 +17,18 @@ export class Socket
     this.socket.onmessage = (event) => { this.recieve(event) };
 
     console.log("Connecting to server on port " + PORT);
-
-    while(this.socket.readyState == this.socket.CONNECTING)
-    {
-      
-    }
   }
 
   open(event)
   {
+    this.isOpen = true;
     console.log("Socket opened.")
   }
 
   close(event)
   {
     this.socket.close();
+    this.isOpen = false;
     console.log("Socket closed.")
   }
 
