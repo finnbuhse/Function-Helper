@@ -45,10 +45,14 @@ export class GraphComponent implements OnInit {
 
   ngOnInit()
   {
+    // Get underlying chart component.
     var chartElement = document.getElementById("chart");
     this.chart = new Chart(chartElement);
   }
 
+  /* Can be used to find a specific point within one of the graph's datasets.
+     -1 is returned if the point is not found, otherwise, it is the index of the point.
+  */
   findPoint(datasetIndex, point)
   {
     for (var i = 0; i < this.datasets[datasetIndex].data.length; i++)
@@ -62,6 +66,11 @@ export class GraphComponent implements OnInit {
     return -1;
   }
 
+  /* Can be used to add a point to one of the graph's datasets. 
+     The point will not be added if it already exists in the dataset.
+     If you require the number of points to be properly represented; consider either adding to the dataset yourself,
+     or adding an additional dataset such as 'frequency' to ensure this information is not lost.
+  */
   addPoint(datasetIndex, point)
   {
     if(this.findPoint(datasetIndex, point) != -1)
