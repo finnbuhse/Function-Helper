@@ -2,6 +2,7 @@ import { Compiler, Component, ElementRef, Input, ViewChild, AfterViewInit } from
 import { GraphComponent } from './graph.component';
 import { solveNewtonRaphson } from './function';
 
+/* Enables the user to interact with a function generated via functionInputs and dataInputs */
 @Component({
   selector: 'functionInteractor',
   templateUrl: 'functionInteractor.component.html',
@@ -48,16 +49,21 @@ export class FunctionInteractorComponent
 		this.hide = false;
   }
 
+	/* Displays the functions value when all substitutions are input. */
 	evaluate()
 	{
 		this.evaluateResult = this.func.evaluate(this.substitutions);
 	}
 
+	/* Displays the function gradient with respect to a variable of choice when all substitutions are input. */
 	gradient()
 	{
-		this.gradientResult = this.func.gradient(this.substitutions, "x");
+		this.gradientResult = this.func.gradient(this.substitutions, this.gradientVariable);
 	}
 
+	/* Generates datasets based on user input.
+		 It then updates the graph to display the function.
+	*/
 	plot()
 	{
 		var range = this.func.evaluateRange(this.substitutions, this.plotIncrementVariable, this.plotVariableStart, this.plotVariableEnd, this.plotIncrement);
@@ -79,6 +85,10 @@ export class FunctionInteractorComponent
 		this.graph.labels = range[0];
 	}
 
+	/* Mathematically solves when the function's solve variable value is equal to 0.
+	   All substitutions defined aside from the 
+		 solve variable's substitution (because this is substituted by the function over the range input) are used.
+	*/
 	solve()
 	{
 		this.solveResult = solveNewtonRaphson(this.func, this.substitutions, this.solveVariable, this.variableStart, 500)[0];

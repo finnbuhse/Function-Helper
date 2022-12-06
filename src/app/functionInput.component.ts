@@ -2,6 +2,7 @@ import { Compiler, Component, ElementRef, Input, ViewChild, AfterViewInit } from
 import { FunctionInteractorComponent } from './functionInteractor.component';
 import { RPFunction, validateStringForFunction, parseStringToFunction, ValidateStringResult } from './function';
 
+/* Enables user to enter a string and convert it to a 'reverse polish function' */
 @Component({
   selector: 'functionInput',
   templateUrl: 'functionInput.component.html',
@@ -14,6 +15,7 @@ export class FunctionInputComponent
   funcString = "";
   validateString = "";
 
+  // Invoked when the convert button is pressed.
   convert()
   {
     this.validateString = "";
