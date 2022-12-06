@@ -8,13 +8,14 @@ export class Socket
   socket: WebSocket;
   isOpen = false;
 
+  // Create WebSocket which attempts to connect to url potentially using additional protocols - this argument does not have to be supplied however.
   constructor(url, protocols = [])
   {
     this.socket = new WebSocket(url, protocols);
-    this.socket.onopen = (event) => { this.open(event) };
-    this.socket.onclose = (event) => { this.close(event) };
-    this.socket.onerror = (event) => { this.error(event) };
-    this.socket.onmessage = (event) => { this.recieve(event) };
+    this.socket.onopen = (event) => this.open(event);
+    this.socket.onclose = (event) => this.close(event);
+    this.socket.onerror = (event) => this.error(event);
+    this.socket.onmessage = (event) => this.recieve(event);
 
     console.log("Connecting to server on port " + PORT);
   }
@@ -48,7 +49,7 @@ export class Socket
   }
 }
 
-@Injectable()
+@Injectable() // Defines 'singleton' like behaviour.
 export class SocketManager
 {
   sockets = []
