@@ -30,7 +30,7 @@ The function mechanics work as intented, however there is more functionality to 
 
 Currently in progress is a server side backend to work in conjunction with the website.
 For security reasons, this code will be kept private. However I will disclose that currently it is being written in C++ using the Websocketpp and OpenSSL libraries to comply with modern security (mainly TLS) protocols.
-Ideally however, the backend will be 'plugable' and hence the future could see this implemented using the Firebase Admin SDK or WebSockets in C#, and potentially libwebsockets. The advantage of this is that the depending on whether the server runs on Windows, it could use the former implementations. Otherwise if running on something else e.g Linux, the latter pure C implementation could be used in performance-critical scenarios.
+Ideally, the server will be 'plugable' and hence the future could see multiple versions implemented using the Firebase Admin SDK or WebSockets in C#, and potentially libwebsockets which is a pure C library. The advantage of this would be that depending on if the server runs on Windows or something else e.g Linux; it could use the former or latter implementations.
 
 The aim of this is to allow users to possess accounts, and save their functions and results to increase the practical applicability of the site.
 
