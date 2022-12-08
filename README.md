@@ -35,4 +35,4 @@ Ideally, the server will be 'plugable' and hence the future could see multiple v
 The aim of this is to allow users to possess accounts, and save their functions and results to increase the practical applicability of the site.
 
 Currently to test the connection to the server, I am using the file upload component which is yet to be implemented. However once a file is selected, the site will attempt to make a connection with the server.
-The server is offline at most times. However once finished, the hope is that the server will be running continuously.
+The server is offline at most times. But once finished, the hope is that the server will be running continuously.
