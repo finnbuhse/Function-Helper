@@ -15,11 +15,11 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-const db = getFirestore(app);
-
 @Injectable() // Defines 'singleton' like behaviour.
 export class FirebaseService implements OnInit
 {
+  db = getFirestore(app);
+ 
   ngOnInit()
   {
 
