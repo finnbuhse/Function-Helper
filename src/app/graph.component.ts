@@ -30,18 +30,12 @@ export class GraphComponent implements OnInit {
             title: 'x',
             id: 'xAxis1',
             type: 'linear',
-            grid: {
-              borderColor: 'red'
-            },
             position: 'bottom'
           }],
           yAxes: [{
             title: 'y',
             id: 'yAxis1',
             type: 'linear',
-            grid: {
-              borderColor: 'red'
-            },
             position: 'left'
           }]
         }
