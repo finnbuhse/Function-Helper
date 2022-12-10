@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild, OnInit } from '@angular/core';
-import { SERVER_URL, Socket, SocketManager } from './socketManager';
+import { FirestoreService } from './firestoreService';
 
 @Component({
   selector: 'fileUpload',
@@ -7,11 +7,9 @@ import { SERVER_URL, Socket, SocketManager } from './socketManager';
   styleUrls: ['./appStyle.css']
 })
 export class FileUploadComponent {
-  serverSocket: Socket;
-
   filename = "";
 
-  constructor(private socketManager: SocketManager)
+  constructor(private store: FirestoreService)
   {
   }
 
@@ -27,15 +25,7 @@ export class FileUploadComponent {
 
       console.log(this.filename);
 
-      this.serverSocket = this.socketManager.getSocket(SERVER_URL);
-
-      this.serverSocket.send("This is a message from the client site.");
-
-      /*
-      const upload$ = this.http.post("/api/thumbnail-upload", formData);
-
-      upload$.subscribe();
-      */
+      
     }
   }
 }
