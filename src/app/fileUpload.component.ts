@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild, OnInit } from '@angular/core';
-import { FirestoreService } from './firestoreService';
+import { FirebaseService } from './firebaseService';
 
 @Component({
   selector: 'fileUpload',
@@ -9,7 +9,7 @@ import { FirestoreService } from './firestoreService';
 export class FileUploadComponent {
   filename = "";
 
-  constructor(private store: FirestoreService)
+  constructor(private store: FirebaseService)
   {
   }
 

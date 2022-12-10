@@ -15,12 +15,12 @@ import { DataInputComponent } from './dataInput.component';
 import { FileUploadComponent } from './fileUpload.component';
 
 import { SocketManager } from './socketManager';
-import { FirestoreService } from './firestoreService';
+import { FirebaseService } from './firebaseService';
 
 @NgModule({
   imports:      [ BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule, MatInputModule, MatFormFieldModule, ChartsModule ],
   declarations: [ AppComponent, GraphComponent, FunctionInteractorComponent, FunctionInputComponent, DataInputComponent, FileUploadComponent ],
-  providers: [ SocketManager, FirestoreService ],
+  providers: [ SocketManager, FirebaseService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {
