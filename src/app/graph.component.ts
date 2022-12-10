@@ -5,49 +5,48 @@ import { Chart } from 'chart.js';
   selector: 'graph',
   template: `
   <div style="width: 50%;">
-    <canvas baseChart id="chart"
-      [chartType]="'line'"
-      [legend]="true"
-      [datasets]="datasets"
-      [labels]="labels"
-      [options]="chartOptions">
-    </canvas>
+    <canvas id="chart">{{ chart }} </canvas>
     `,
     styleUrls: ['./appStyle.css']
 })
 export class GraphComponent implements OnInit {
-  datasets = [];
-  labels = [];
-  chartOptions = {
-    responsive: true,
-    scales: {
-      xAxes: [{
-        title: 'x',
-        id: 'xAxis1',
-        type: 'linear',
-        grid: {
-          borderColor: 'red'
-        },
-        position: 'bottom'
-      }],
-      yAxes: [{
-        title: 'y',
-        id: 'yAxis1',
-        type: 'linear',
-        grid: {
-          borderColor: 'red'
-        },
-        position: 'left'
-      }]
-    }
-  };
-  chart: Chart;
+  chart: any;
 
   ngOnInit()
   {
     // Get underlying chart component.
-    var chartElement = document.getElementById("chart");
-    this.chart = new Chart(chartElement);
+    this.chart = new Chart("chart", {
+      type: 'line',
+
+      data: {
+        labels: [], 
+	      datasets: []
+      },
+
+      options: {
+        responsive: true,
+        scales: {
+          xAxes: [{
+            title: 'x',
+            id: 'xAxis1',
+            type: 'linear',
+            grid: {
+              borderColor: 'red'
+            },
+            position: 'bottom'
+          }],
+          yAxes: [{
+            title: 'y',
+            id: 'yAxis1',
+            type: 'linear',
+            grid: {
+              borderColor: 'red'
+            },
+            position: 'left'
+          }]
+        }
+      }
+    });
   }
 
   /* Can be used to find a specific point within one of the graph's datasets.
