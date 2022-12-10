@@ -7,7 +7,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ChartsModule } from 'ng2-charts';
 
-
 import { AppComponent } from './app.component';
 import { GraphComponent } from './graph.component';
 import { FunctionInteractorComponent } from './functionInteractor.component';
@@ -16,11 +15,12 @@ import { DataInputComponent } from './dataInput.component';
 import { FileUploadComponent } from './fileUpload.component';
 
 import { SocketManager } from './socketManager';
+import { FirestoreService } from './firestoreService';
 
 @NgModule({
   imports:      [ BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule, MatInputModule, MatFormFieldModule, ChartsModule ],
   declarations: [ AppComponent, GraphComponent, FunctionInteractorComponent, FunctionInputComponent, DataInputComponent, FileUploadComponent ],
-  providers: [ SocketManager ],
+  providers: [ SocketManager, FirestoreService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {
