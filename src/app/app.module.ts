@@ -7,8 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ChartsModule } from 'ng2-charts';
 
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+
 import { AppComponent } from './app.component';
 import { GraphComponent } from './graph.component';
 import { FunctionInteractorComponent } from './functionInteractor.component';
