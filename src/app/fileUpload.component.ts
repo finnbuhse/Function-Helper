@@ -24,7 +24,6 @@ export class FileUploadComponent {
       formData.append("thumbnail", file);
 
       console.log(this.filename);
-
       
     }
   }

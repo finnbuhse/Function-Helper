@@ -1,9 +1,9 @@
-import { Injectable} from "@angular/core";
+import { Injectable, OnInit } from "@angular/core";
 import { initializeApp } from "@firebase/app";
 import { getFirestore } from "@firebase/firestore";
 
 @Injectable() // Defines 'singleton' like behaviour.
-export class FirebaseService
+export class FirebaseService implements OnInit
 {
   firebaseConfig = {
     apiKey: "AIzaSyBCajsw1DN4lzSpJJkfUrOUdKmEbZl66f4",
@@ -18,9 +18,9 @@ export class FirebaseService
 
   app = initializeApp(this.firebaseConfig);
 
-  firestore;
+  firestore: any;
 
-  constructor()
+  ngOnInit()
   {
     this.firestore = getFirestore(this.app);
   }
