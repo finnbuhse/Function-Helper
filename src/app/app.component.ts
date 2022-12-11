@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'my-app',
@@ -7,4 +8,9 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
+
+  constructor (private store: AngularFirestore)
+  {
+
+  }
 }
