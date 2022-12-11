@@ -1,5 +1,5 @@
 import { Component, VERSION } from '@angular/core';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'my-app',
