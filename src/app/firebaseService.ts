@@ -18,7 +18,7 @@ export class FirebaseService implements OnInit
 {
   app = initializeApp(firebaseConfig);
 
-  db = getFirestore(this.app);
+  //db = getFirestore(this.app);
  
   ngOnInit()
   {

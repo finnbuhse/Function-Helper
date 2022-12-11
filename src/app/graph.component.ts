@@ -24,6 +24,7 @@ export class GraphComponent implements OnInit {
       },
 
       options: {
+        responsive: true,
         scales: {
           xAxes: [{
             title: 'x',
