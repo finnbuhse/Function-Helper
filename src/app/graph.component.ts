@@ -1,11 +1,11 @@
 import { Component, Input, ViewChild, OnInit } from '@angular/core';
-import { Chart } from 'chart.js';
+import { Chart, ChartType } from 'chart.js';
 
 @Component({
   selector: 'graph',
   template: `
   <div style="width: 50%;">
-    <canvas id="chart">{{ chart }} </canvas>
+    <canvas id="chart">{{ chart }}</canvas>
     `,
     styleUrls: ['./appStyle.css']
 })
@@ -16,7 +16,7 @@ export class GraphComponent implements OnInit {
   {
     // Get underlying chart component.
     this.chart = new Chart("chart", {
-      type: 'line',
+      type: 'line' as ChartType,
 
       data: {
         labels: [], 
