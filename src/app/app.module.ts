@@ -30,18 +30,13 @@ import { FunctionInteractorComponent } from './functionInteractor.component';
 import { FunctionInputComponent } from './functionInput.component';
 import { DataInputComponent } from './dataInput.component';
 import { FileUploadComponent } from './fileUpload.component';
-import { getFirestore } from '@angular/fire/firestore';
-import { initializeApp } from '@angular/fire/app';
-
-
 
 @NgModule({
-  imports:      [ BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule, MatInputModule, MatFormFieldModule, ChartsModule, AngularFireModule.initializeApp(firebaseConfig) ],
+  imports:      [ BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule, MatInputModule, MatFormFieldModule, ChartsModule, AngularFireModule.initializeApp(firebaseConfig), AngularFirestoreModule ],
   declarations: [ AppComponent, GraphComponent, FunctionInteractorComponent, FunctionInputComponent, DataInputComponent, FileUploadComponent ],
   providers: [],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {
-  app = initializeApp(firebaseConfig);
-  db = getFirestore(this.app);
+
 }
