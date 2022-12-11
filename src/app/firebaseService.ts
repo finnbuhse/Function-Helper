@@ -18,9 +18,9 @@ const environment = {
   firebase: firebaseConfig
 }
 
-@Injectable({
-  imports: [ AngularFireModule ]
-}) // Defines 'singleton' like behaviour.
+@Injectable({ // Defines 'singleton' like behaviour.
+  imports: [ AngularFireModule.initializeApp(firebaseConfig), AngularFirestoreModule ]
+})
 export class FirebaseService implements OnInit
 {
 
