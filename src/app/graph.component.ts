@@ -24,7 +24,7 @@ export class GraphComponent implements OnInit {
       },
 
       options: {
-        responsive: true,
+        /*
         scales: {
           xAxes: [{
             title: 'x',
@@ -39,6 +39,7 @@ export class GraphComponent implements OnInit {
             position: 'left'
           }]
         }
+        */
       }
     });
   }
@@ -48,9 +49,9 @@ export class GraphComponent implements OnInit {
   */
   findPoint(datasetIndex, point)
   {
-    for (var i = 0; i < this.datasets[datasetIndex].data.length; i++)
+    for (var i = 0; i < this.chart.data.datasets[datasetIndex].data.length; i++)
     {
-      var datasetPoint = this.datasets[datasetIndex].data[i];
+      var datasetPoint = this.chart.data.datasets[datasetIndex].data[i];
       if(point[0] == datasetPoint.x && point[1] == datasetPoint.y)
       {
         return i;
@@ -68,7 +69,7 @@ export class GraphComponent implements OnInit {
   {
     if(this.findPoint(datasetIndex, point) != -1)
       return;
-    this.datasets[datasetIndex].data.push({x: point[0], y: point[1]});
+    this.chart.data.datasets[datasetIndex].data.push({x: point[0], y: point[1]});
     this.chart.update();
   }
 }
