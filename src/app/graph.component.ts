@@ -24,7 +24,6 @@ export class GraphComponent implements OnInit {
       },
 
       options: {
-        /*
         scales: {
           xAxes: [{
             title: 'x',
@@ -39,7 +38,6 @@ export class GraphComponent implements OnInit {
             position: 'left'
           }]
         }
-        */
       }
     });
   }
