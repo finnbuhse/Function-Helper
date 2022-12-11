@@ -9,7 +9,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
 
-  constructor (private store: AngularFirestore)
+  constructor ()
   {
 
   }
