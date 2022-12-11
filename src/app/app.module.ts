@@ -32,7 +32,7 @@ import { DataInputComponent } from './dataInput.component';
 import { FileUploadComponent } from './fileUpload.component';
 
 @NgModule({
-  imports:      [ BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule, MatInputModule, MatFormFieldModule, ChartsModule, AngularFireModule, AngularFirestoreModule ],
+  imports:      [ BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule, MatInputModule, MatFormFieldModule, ChartsModule, AngularFireModule.initializeApp(firebaseConfig) ],
   declarations: [ AppComponent, GraphComponent, FunctionInteractorComponent, FunctionInputComponent, DataInputComponent, FileUploadComponent ],
   providers: [],
   bootstrap: [ AppComponent ]
