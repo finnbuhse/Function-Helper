@@ -68,7 +68,7 @@ export class FunctionInteractorComponent
 	{
 		var range = this.func.evaluateRange(this.substitutions, this.plotIncrementVariable, this.plotVariableStart, this.plotVariableEnd, this.plotIncrement);
 
-		this.graph.chart.data.datasets = [{
+		this.graph.setDatasets([{
 			data: range[1],
 			label: 'y',
 			type: 'line',
@@ -80,9 +80,9 @@ export class FunctionInteractorComponent
 			type: 'line',
     	yAxisID: 'yAxis1',
 			showLine: false,
-		}
-		];
-		this.graph.chart.data.labels = range[0];
+		}]);
+
+		this.graph.setLabels(range[0]);
 	}
 
 	/* Mathematically solves when the function's solve variable value is equal to 0.

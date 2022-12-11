@@ -30,17 +30,35 @@ export class GraphComponent implements OnInit {
             title: 'x',
             id: 'xAxis1',
             type: 'linear',
-            position: 'bottom'
+            position: 'bottom',
+            grid:
+            {
+              borderColor: 'red'
+            }
           }],
           yAxes: [{
             title: 'y',
             id: 'yAxis1',
             type: 'linear',
-            position: 'left'
+            position: 'left',
+            grid:
+            {
+              borderColor: "blue"
+            }
           }]
         }
       }
     });
+  }
+
+  setDatasets(datasets)
+  {
+    this.chart.data.datasets = datasets;
+  }
+
+  setLabels(labels)
+  {
+    this.chart.data.labels = labels;
   }
 
   /* Can be used to find a specific point within one of the graph's datasets.

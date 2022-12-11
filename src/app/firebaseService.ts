@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from "@angular/core";
-import { initializeApp } from "@firebase/app";
+import { AngularFireModule } from "@angular/fire";
 import { getFirestore } from "@firebase/firestore";
 
 const firebaseConfig = {
@@ -13,12 +13,17 @@ const firebaseConfig = {
   measurementId: "G-F7MXM13S6S",
 };
 
-@Injectable() // Defines 'singleton' like behaviour.
+const environment = {
+  production: false,
+  firebase: firebaseConfig
+}
+
+@Injectable({
+  imports: [ AngularFireModule ]
+}) // Defines 'singleton' like behaviour.
 export class FirebaseService implements OnInit
 {
-  app = initializeApp(firebaseConfig);
 
-  //db = getFirestore(this.app);
  
   ngOnInit()
   {
