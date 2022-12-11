@@ -1,6 +1,9 @@
 import { Injectable, OnInit } from "@angular/core";
-import { AngularFireModule } from "@angular/fire";
-import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireModule } from "@angular/fire/compat";
+//import { AngularFireAuthModule } from "@angular/fire/compat/auth";
+//import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+//import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBCajsw1DN4lzSpJJkfUrOUdKmEbZl66f4",
