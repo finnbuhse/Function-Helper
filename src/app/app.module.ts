@@ -31,13 +31,10 @@ import { FunctionInputComponent } from './functionInput.component';
 import { DataInputComponent } from './dataInput.component';
 import { FileUploadComponent } from './fileUpload.component';
 
-import { SocketManager } from './socketManager';
-import { FirebaseService } from './firebaseService';
-
 @NgModule({
   imports:      [ BrowserModule, HttpClientModule, BrowserAnimationsModule, FormsModule, MatInputModule, MatFormFieldModule, ChartsModule, AngularFireModule.initializeApp(firebaseConfig), AngularFirestoreModule ],
   declarations: [ AppComponent, GraphComponent, FunctionInteractorComponent, FunctionInputComponent, DataInputComponent, FileUploadComponent ],
-  providers: [ SocketManager, FirebaseService ],
+  providers: [],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {
