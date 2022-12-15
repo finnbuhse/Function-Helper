@@ -4,10 +4,11 @@ import { Chart, ChartType } from 'chart.js';
 @Component({
   selector: 'graph',
   template: `
-  <div style="width: 50%;">
-    <canvas id="chart">{{ chart }}</canvas>
+    <div style="width: 50%;">
+      <canvas id="chart">{{ chart }}</canvas>
+    </div>
     `,
-    styleUrls: ['./appStyle.css']
+  styleUrls: ['../../appStyle.css']
 })
 export class GraphComponent implements OnInit {
   chart: any;

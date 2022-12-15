@@ -1,11 +1,11 @@
 import { Compiler, Component, ElementRef, Input, ViewChild, AfterViewInit } from '@angular/core';
-import { Operator, Variable, RPFunction } from './function';
-import { FunctionInteractorComponent } from './functionInteractor.component';
+import { Operator, Variable, RPFunction } from '../../shared/function';
+import { FunctionInteractorComponent } from '../function-interactor/functionInteractor.component';
 
 @Component({
   selector: 'dataInput',
   templateUrl: 'dataInput.component.html',
-	styleUrls: ['./appStyle.css']
+	styleUrls: ['../../appStyle.css']
 })
 export class DataInputComponent {
   @ViewChild(FunctionInteractorComponent) functionInteractor: FunctionInteractorComponent;

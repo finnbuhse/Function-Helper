@@ -1,12 +1,12 @@
 import { Compiler, Component, ElementRef, Input, ViewChild, AfterViewInit } from '@angular/core';
-import { FunctionInteractorComponent } from './functionInteractor.component';
-import { RPFunction, validateStringForFunction, parseStringToFunction, ValidateStringResult } from './function';
+import { FunctionInteractorComponent } from '../function-interactor/functionInteractor.component';
+import { RPFunction, validateStringForFunction, parseStringToFunction, ValidateStringResult } from '../../shared/function';
 
 /* Enables user to enter a string and convert it to a 'reverse polish function' */
 @Component({
   selector: 'functionInput',
   templateUrl: 'functionInput.component.html',
-	styleUrls: ['./appStyle.css']
+	styleUrls: ['../../appStyle.css']
 })
 export class FunctionInputComponent
 {

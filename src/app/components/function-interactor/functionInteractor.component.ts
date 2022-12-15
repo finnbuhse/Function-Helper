@@ -1,12 +1,12 @@
 import { Compiler, Component, ElementRef, Input, ViewChild, AfterViewInit } from '@angular/core';
-import { GraphComponent } from './graph.component';
-import { solveNewtonRaphson } from './function';
+import { GraphComponent } from '../graph/graph.component';
+import { solveNewtonRaphson } from '../../shared/function';
 
 /* Enables the user to interact with a function generated via functionInputs and dataInputs */
 @Component({
   selector: 'functionInteractor',
   templateUrl: 'functionInteractor.component.html',
-	styleUrls: ['./appStyle.css']
+	styleUrls: ['../../appStyle.css']
 })
 export class FunctionInteractorComponent
 {
