@@ -7,7 +7,7 @@
     <tr *ngFor="let var of variables; let i = index;">
       <td>
         <mat-form-field>
-          <input required matInput placeholder="{{variables[i]}} values" [name]="'set_' + i" type="text" [(ngModel)]="datasetTexts[i]"/> <br>
+          <input mat-input placeholder="{{variables[i]}} values" [name]="'set_' + i" type="text" [(ngModel)]="datasetTexts[i]"/> <br>
         </mat-form-field>
       </td>
     </tr> <br>
