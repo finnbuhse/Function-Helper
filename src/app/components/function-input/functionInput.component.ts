@@ -6,7 +6,7 @@ import { RPFunction, validateStringForFunction, parseStringToFunction, ValidateS
 @Component({
   selector: 'functionInput',
   templateUrl: 'functionInput.component.html',
-	styleUrls: ['../../appStyle.css']
+	styleUrls: ['../../../styles.css']
 })
 export class FunctionInputComponent
 {

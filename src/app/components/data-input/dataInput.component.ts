@@ -5,7 +5,7 @@ import { FunctionInteractorComponent } from '../function-interactor/functionInte
 @Component({
   selector: 'dataInput',
   templateUrl: 'dataInput.component.html',
-	styleUrls: ['../../appStyle.css']
+	styleUrls: ['../../../styles.css']
 })
 export class DataInputComponent {
   @ViewChild(FunctionInteractorComponent) functionInteractor: FunctionInteractorComponent;

@@ -6,7 +6,7 @@ import { solveNewtonRaphson } from '../../shared/function';
 @Component({
   selector: 'functionInteractor',
   templateUrl: 'functionInteractor.component.html',
-	styleUrls: ['../../appStyle.css']
+	styleUrls: ['../../../styles.css']
 })
 export class FunctionInteractorComponent
 {

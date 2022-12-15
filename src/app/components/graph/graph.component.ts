@@ -8,7 +8,7 @@ import { Chart, ChartType } from 'chart.js';
       <canvas id="chart">{{ chart }}</canvas>
     </div>
     `,
-  styleUrls: ['../../appStyle.css']
+  styleUrls: ['../../../styles.css']
 })
 export class GraphComponent implements OnInit {
   chart: any;

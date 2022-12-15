@@ -3,7 +3,7 @@ import { Component, Input, ViewChild, OnInit } from '@angular/core';
 @Component({
   selector: 'fileUpload',
   templateUrl: './fileUpload.component.html',
-  styleUrls: ['../../appStyle.css']
+  styleUrls: ['../../../styles.css']
 })
 export class FileUploadComponent {
   filename = "";
