@@ -1,0 +1,16 @@
+<centre height="6vh">
+  <input mat-input type="string" placeholder="Email address" [(ngModel)]="email" /> <br>
+  <input mat-input type="string" placeholder="Password" [(ngModel)]="password" /> <br>
+</centre>
+<centre height="6vh">
+  <button mat-raised-button color="primary" (click)="signIn()">Sign in</button> <br>
+</centre>
+<centre height="6vh">
+  <button mat-raised-button color="primary" (click)="forgotPassword()">Forgot password?</button>
+</centre>
+<centre height="7vh" backgroundColour="white">
+  <p> Dont have an account? Sign up below:
+</centre>
+<centre height="6vh">
+  <button mat-raised-button color="primary" (click)="signUp()">Register account</button>
+</centre>

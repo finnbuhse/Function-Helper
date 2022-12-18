@@ -1,49 +1,59 @@
-import { NgModule, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ChartsModule } from 'ng2-charts';
+import { MatInputModule } from '@angular/material/input';
+import { AppRoutingModule } from './app-routing.module';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBCajsw1DN4lzSpJJkfUrOUdKmEbZl66f4",
-  authDomain: "function-helper.firebaseapp.com",
-  databaseURL: "https://function-helper.eur3.firebaseio.com",
-  projectId: "function-helper",
-  storageBucket: "function-helper.appspot.com",
-  messagingSenderId: "278533435669",
-  appId: "1:278533435669:web:1f54b8bc463f36b3e3791c",
-  measurementId: "G-F7MXM13S6S",
-};
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { firebaseConfig } from './firebaseConfig';
 
 import { AppComponent } from './app.component';
-import { GraphComponent } from './components/graph/graph.component';
-import { FunctionInteractorComponent } from './components/function-interactor/functionInteractor.component';
-import { FunctionInputComponent } from './components/function-input/functionInput.component';
-import { DataInputComponent } from './components/data-input/dataInput.component';
-import { FileUploadComponent } from './components/file-upload/fileUpload.component';
+import { CentreComponent } from './components/centre/centre.component';
+import { SignInComponent } from './components/sign-in/signIn.component';
+import { SignUpComponent } from './components/sign-up/signUp.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgotPassword.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { VerifyEmailComponent } from './components/verify-email/verifyEmail.component';
+
+//import { GraphComponent } from './components/graph/graph.component';
+//import { FunctionInputComponent } from './components/function-input/functionInput.component';
+//import { DataInputComponent } from './components/data-input/dataInput.component';
+//import { FunctionInteractorComponent } from './components/function-interactor/functionInteractor.component';
+
+//import { APP_BASE_HREF } from '@angular/common';
+import { FirebaseService } from './shared/firebase/firebase.auth.service';
 
 @NgModule({
-  imports:      [ 
-    BrowserModule, 
-    BrowserAnimationsModule, 
-    FormsModule, 
-    MatInputModule, 
-    MatFormFieldModule, 
-    ChartsModule
-  ],
   declarations: [
     AppComponent,
-    GraphComponent,
-    FunctionInteractorComponent,
-    FunctionInputComponent,
-    DataInputComponent,
-    FileUploadComponent
+    CentreComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    DashboardComponent,
+    VerifyEmailComponent
   ],
-  providers: [],
-  bootstrap: [ AppComponent ]
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    AppRoutingModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule
+  ],
+  providers: [
+    //{ provide: APP_BASE_HREF, useValue: '/' },
+    FirebaseService
+  ],
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-
-}
+export class AppModule { }
