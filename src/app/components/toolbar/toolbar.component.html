@@ -1,0 +1,13 @@
+<div class="toolbar">
+  <mat-toolbar color="primary">
+    <span> Function Helper </span>
+    <button mat-icon-button (click)="help()">
+      <i class="fa-solid fa-circle-info"></i>
+    </button>
+    <div *ngIf="signedIn == true">
+      <button mat-icon-button class="accountbutton" (click)="account()">
+        <i class="fa-solid fa-user"></i>
+      </button>
+    </div>
+  </mat-toolbar>
+</div>

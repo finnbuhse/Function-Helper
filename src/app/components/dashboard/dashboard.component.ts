@@ -4,16 +4,16 @@ import { FirebaseService } from 'src/app/shared/firebase/firebase.auth.service';
 @Component({
   selector: 'dashboard',
   templateUrl: `./dashboard.component.html`,
-  styles: [`h1 { font-family: Lato; }`]
+  styleUrls: []
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit
+{
   signedIn: boolean = false;
 
-  constructor(private fbs: FirebaseService) {
+  constructor(private fbs: FirebaseService) {}
 
-  }
-
-  ngOnInit() {
+  ngOnInit()
+  {
     this.signedIn = this.fbs.isLoggedIn;
   }
 }

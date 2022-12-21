@@ -4,7 +4,7 @@ import { FirebaseService } from 'src/app/shared/firebase/firebase.auth.service'
 @Component({
   selector: 'forgotpassword',
   templateUrl: `./forgotpassword.component.html`,
-  styles: [`h1 { font-family: Lato; }`]
+  styleUrls: []
 })
 export class ForgotPasswordComponent {
   email: string = "";

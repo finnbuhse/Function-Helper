@@ -1,7 +1,20 @@
-<centre height="6vh">
-  <input mat-input type="string" placeholder="Email address" [(ngModel)]="email" /> <br>
-  <input mat-input type="string" placeholder="Password" [(ngModel)]="password" /> <br>
-</centre>
+<toolbar></toolbar>
+
+<centre height="10vh" backgroundColour="white">
+  <mat-form-field>
+    <input matInput required type="string" placeholder="Email address" [(ngModel)]="email" />
+  </mat-form-field>
+</centre> <br/>
+
+<centre width="100vw" height="10vh" contentWidth="29vh" backgroundColour="white">
+  <mat-form-field>
+    <input matInput required type="string" placeholder="Password" [type]="hide ? 'password' : 'text'" [(ngModel)]="password" />
+  </mat-form-field>
+  <button mat-button (click)="hide = !hide">
+    <i class="fa-regular fa-eye-slash"></i>
+  </button>
+</centre> <br/>
+
 <centre height="6vh">
   <button mat-raised-button color="primary" (click)="signIn()">Sign in</button> <br>
 </centre>

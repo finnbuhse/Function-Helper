@@ -3,6 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'verifyemail',
   templateUrl: `./verifyemail.component.html`,
-  styles: [`h1 { font-family: Lato; }`]
+  styleUrls: []
 })
 export class VerifyEmailComponent { }

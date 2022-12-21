@@ -82,6 +82,11 @@ export class FirebaseService {
     });
   }
 
+  getUserData()
+  {
+    return JSON.parse(localStorage.getItem('user') as string);
+  }
+
   setUserData(user: any) {
     const userRef: AngularFirestoreDocument<any> = this.db.doc(
       `users/${user.uid}`
@@ -103,5 +108,12 @@ export class FirebaseService {
       localStorage.removeItem('user');
       this.router.navigate(['sign-in']);
     });
+  }
+
+  changeDisplayName(displayName: string) {
+    const userRef: AngularFirestoreDocument<any> = this.db.doc(
+      `users/${this.userData.uid}`
+    );
+    userRef.update({ "displayName": displayName });
   }
 }

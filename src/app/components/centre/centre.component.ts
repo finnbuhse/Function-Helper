@@ -4,13 +4,15 @@ import { Component, AfterViewInit, Input, ElementRef } from '@angular/core';
 @Component({
   selector: 'centre',
   templateUrl: `./centre.component.html`,
-  styles: [`h1 { font-family: Lato; }`]
+  styleUrls: []
 })
 export class CentreComponent implements AfterViewInit {
   static instanceCount = 0;
 
   @Input() width: string = "100vw";
   @Input() height: string = "100vh";
+  @Input() contentWidth: string = "auto";
+  @Input() contentHeight: string = "auto";
   @Input() marginOffset: string = "0px 0px 0px 0px";
   @Input() backgroundColour: string = "lightgrey";
 
@@ -30,6 +32,8 @@ export class CentreComponent implements AfterViewInit {
     // Set style inputs
     this.native.style.setProperty('--centreWidth', this.width);
     this.native.style.setProperty('--centreHeight', this.height);
+    this.native.style.setProperty('--width', this.contentWidth);
+    this.native.style.setProperty('--height', this.contentHeight);
     this.native.style.setProperty('--backgroundColour', this.backgroundColour);
 
     /* childDiv contains the centre's contents.

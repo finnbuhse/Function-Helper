@@ -1,16 +1,15 @@
-<div *ngIf="signedIn == true">
-  <!--
-  <mat-grid-list cols="2" rowHeight="1:1">
-    <mat-grid-tile class="dashcolumn">
-      <functionInput></functionInput>
-    </mat-grid-tile>
-    <mat-grid-tile class="dashcolumn">
-      <dataInput></dataInput>
-    </mat-grid-tile>
+<toolbar></toolbar>
 
-  </mat-grid-list>-->
-  <p> You have reached the dashboard... which is empty. </p>
+<div *ngIf="signedIn == true">
+  <div class="dashcontainer">
+    <div class="dashcolumn">
+      <functionInput></functionInput>
+    </div>
+    <div class="dashcolumn">
+      <dataInput></dataInput>
+    </div>
+  </div>
 </div>
 <div *ngIf="signedIn == false">
   <p> Failed to sign you in. Please make sure you're email verified. </p>
-<div>
+</div>

@@ -2,42 +2,69 @@
 /* Add application styles & imports to this file! */
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 
+/* Use Arial as font */
+h1 {
+  font-family: Arial;
+}
+
+h2 {
+  font-family: Arial;
+}
+
+p {
+  font-family: Arial;
+}
+
+/* CENTRE COMPONENT CLASSES */
 :root {
-  --centreWidth: 100vw;
-  --centreHeight: 100vh;
-  --width: auto;
-  --height: auto;
-  --margin: "0px 0px 0px 0px";
-  --backgroundColour: lightgrey;
+    --centreWidth: 100vw;
+    --centreHeight: 100vh;
+    --width: auto;
+    --height: auto;
+    --margin: "0px 0px 0px 0px";
+    --backgroundColour: lightgrey;
 }
 
 .centreparent {
-  position: relative;
-  background: white;
-  width: var(--centreWidth);
-  height: var(--centreHeight);
+    position: relative;
+    background: white;
+    width: var(--centreWidth);
+    height: var(--centreHeight);
 }
 
 .centrechild {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  padding-left: 4pt;
-  padding-right: 4pt;
-  padding-bottom: 4pt;
-  padding-top: 4pt;
-  width: var(--width);
-  height: var(--height);
-  margin: var(--margin);
-  background: var(--backgroundColour);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding-left: 4pt;
+    padding-right: 4pt;
+    padding-bottom: 4pt;
+    padding-top: 4pt;
+    width: var(--width);
+    height: var(--height);
+    margin: var(--margin);
+    background: var(--backgroundColour);
+}
+/* ------------------------ */
+
+/* TOOLBAR CLASSESS */
+.toolbar {
+    padding-bottom: 10pt;
+}
+
+.accountbutton
+{
+    left: 85vw;
+}
+/* ---------------- */
+
+/* DASHBOARD CLASSES */
+.dashcontainer {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .dashcolumn {
-  position: relative;
-  top: 0%;
-  left: 0%;
-  padding-left: 4pt;
-  padding-right: 4pt;
-  padding-bottom: 300pt;
-  padding-top: 4pt;
+    flex: 50%;
 }
+/* ----------------- */

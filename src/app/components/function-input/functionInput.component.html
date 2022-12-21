@@ -1,6 +1,9 @@
-<input mat-input type="text" [(ngModel)]="funcString"/>
-<button type="button" (click)="convert()">Convert</button>
+<mat-form-field>
+  <mat-label> Enter a function </mat-label>
+  <input matInput placeholder="e.g 'x ^ 2 - 1'" type="text" [(ngModel)]="funcString" />
+</mat-form-field>
+<button mat-raised-button type="button" (click)="convert()" color="primary">Convert</button>
 <div *ngIf="validateString != ''">
   <p> {{validateString}} <p>
 </div>
-<functionInteractor></functionInteractor>
+<functionInteractor #interactor></functionInteractor>

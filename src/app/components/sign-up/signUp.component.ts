@@ -4,7 +4,7 @@ import { FirebaseService } from 'src/app/shared/firebase/firebase.auth.service';
 @Component({
   selector: 'signup',
   templateUrl: `./signup.component.html`,
-  styles: [`h1 { font-family: Lato; }`]
+  styleUrls: []
 })
 export class SignUpComponent {
   email: string = "";

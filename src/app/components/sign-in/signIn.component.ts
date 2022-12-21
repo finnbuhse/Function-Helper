@@ -5,11 +5,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'signin',
   templateUrl: `./signin.component.html`,
-  styles: [`h1 { font-family: Lato; }`]
+  styleUrls: []
 })
 export class SignInComponent {
   email: string = "";
   password: string = "";
+  hide: boolean = true; // Hide password
 
   constructor(private router: Router, private fbs: FirebaseService) {
 

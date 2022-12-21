@@ -1,0 +1,55 @@
+<h1>What is Function Helper?</h1>
+<p>
+  Function helper is a tool designed to help you with mathematical functions whatever the application.
+  However, there is still much to come in the future, for example; functions can be applied in the form of matrices.
+  Allowing for allot of new interesting functionality.
+</p>
+
+<h1>How do I use Function Helper?</h1>
+<p>
+  Firstly, you must make an account. At the sign in page click 'Register Account' at which point you will be redirected to the sign in page.
+  Enter your email and password then click 'Sign up', shortly after you should recieve a email likely in your spam folder containing a link.
+  Click the link (at your own risk given that you trust the email has come from Function Helper) which should verify your account.
+
+  At this point you're all set to start using Function Helper! Just sign in and you should be redirected to the dashboard.
+
+  Here you will be met with two columes, one side is the 'function-input' side. And the other is the 'data-input' side representing the two current methods
+  of generating a function.
+</p>
+
+<h2> Function input (left) side </h2>
+<p> Here you can simply enter a function as text however, there are some rules/syntax you must follow: </p>
+<p> - Scalars in front of variables cannot be written '5x' but must be written '5 * x' for example. </p>
+<p> - Powers should be written as follows: 'x ^ power'. Note that roots can be written: 'x ^ (1 / n)'. </p>
+<p> - Similarly, +, -, *, and / operators must have a space between them and their parameters. </p>
+<p> - There should never be a space immediately following an open bracket, or preceding a closing bracket. For example '( x + 4 )' is invalid and should be written '(x + 4)' instead. </p>
+<p> - Logarithms are supported and should be written 'log(base, x)'. </p>
+<p> - Sin, Cos, and Tan are also supported and are written sin(x), cos(x), and tan(x) respectively. </p>
+<p> - Variables are required to be 1 character. </p>
+
+<p>  Examples:
+<p> - 'x ^ 2 - 1' [Has solutions] </p>
+<p> - '(100 - x ^ 2) ^ 0.5' [Does not have solutions] </p>
+<p> - 'tan(sin(x))' [Has solutions] </p>
+<p> - 'cos(log(10, x))' [Has solutions] </p>
+<p> - 'cos(log(b, x))' [Has solutions provided b > 0] </p>
+<h2> Data Input (right) side </h2>
+<p>
+  Here you can enter a set of values for x and y, comma and/or space seperated, note that the sets should be the same length.
+  Once the 'Generate' button is pressed, a function that goes through all the points specified is generated.
+  Functions generated with more than 3 points are virtually unreadable, as the text output is the unsimplified LaGrange polynomial with sed points inputed in reverse polish notation.
+</p>
+
+<h1>Why use reverse polish notation? </h1>
+<p>
+  The advantage of reverse polish notation is that order does not matter.
+  Which makes it harder to understand for us humans, likely taught conventonial algebraic notation, in return for it being easier for the computer to understand since
+  it does not need to consider order (i.e BIDMAS) when it queries the function. However, when converting text to a function (i.e reverse polish notation) BIDMAS
+  is used setting the function up for the correct order of operations.
+</p>
+
+<h1>How was Function Helper made? </h1>
+<p>
+  Function helper is developed using Angular 15 and Visual Studio 2022. With Firebase making it possible to have its very own webiste providing authentication and a database.
+  It also relies on Chart.js for its beautiful graphs!
+</p>
